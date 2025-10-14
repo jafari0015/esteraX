@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+
+:root {
+    --primary: #140d25;
+    --secondary: #140d25;
+    --foreground: #ffffff;
+}
+
+body {
+    font-family: var(--font-afacad);
+}
+
+@layer base {
+    .learnBtn {
+        @apply bg-transparent text-[#ffffff] flex items-center justify-center gap-6 text-2xl transition-all duration-700 cursor-pointer py-0.5 font-medium hover:bg-[#ffffff] hover:text-[#140d25] rounded-full pl-1 pr-8;
+    }
+}
+.scrol-thin::-webkit-scrollbar {
+    display: none;
+}
+.scrol-thin {
+    -ms-overflow-style: none; 
+     scrollbar-width: none; 
+}
+::-webkit-scrollbar {
+    display: none;
+}
