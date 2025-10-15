@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import LearnMore2 from "../ui/learn-more-2";
 
@@ -37,13 +37,13 @@ const AboutSection: React.FC<AboutSectionProps> = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const revealVariant: any = {
+  const variants: Variants = {
     hidden: { x: 0 },
     visible: {
-      x: "100%",
+      x: 100,
       transition: {
         duration: 1.8,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       },
     },
   };
@@ -70,7 +70,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             />
             <motion.div
               className="absolute top-0 left-0 w-full h-full bg-[#140d25] z-10"
-              variants={revealVariant}
+              variants={variants}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
             />

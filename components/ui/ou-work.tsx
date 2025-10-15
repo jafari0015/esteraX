@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 import React, { useEffect, useState, useRef } from "react";
 import Line from "../Layout/line";
 import DrawOutlineButton from "./draw-outline-button";
@@ -27,7 +27,7 @@ const WorkComponents = ({ imageSrc = "" }) => {
     setIsVisible(inView);
   }, [inView]);
 
-  const revealVariant: any = {
+  const revealVariant: Variants = {
     hidden: { x: 0 },
     visible: {
       x: "100%",

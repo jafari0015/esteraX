@@ -7,9 +7,9 @@ import Line from "../Layout/line";
 import Link from "next/link";
 import faqData from "../../Data/faq-data";
 const FAQSection = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const toggleAccordion = (index: any) => {
+  const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 

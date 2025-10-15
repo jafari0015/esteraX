@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
 import LearnMore2 from "../ui/learn-more-2";
 import Line from "../Layout/line";
@@ -90,7 +90,7 @@ const HorizontalAccordion: React.FC = () => {
     };
   }, [isSmallScreen]);
 
-  const textVariants: any = {
+  const textVariants: Variants = {
     hidden: { opacity: 0, height: 0, y: 8 },
     visible: {
       opacity: 1,

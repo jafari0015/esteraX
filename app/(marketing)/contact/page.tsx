@@ -55,8 +55,8 @@ export default function ContactPage() {
               Contact us about an opportunity, partnership or media enquiry
             </h1>
             <p className="text-white/80 text-base md:text-xl leading-6 max-w-xl">
-              Please provide a brief description of your business inquiry and
-              we'll get back to you as soon as we can.
+              Please provide a brief description of your business inquiry and we
+              will get back to you as soon as we can.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export default function ContactPage() {
                     htmlFor="updates"
                     className="text-white text-base cursor-pointer"
                   >
-                    I'd like to receive updates from Satalia
+                    I would like to receive updates from Satalia
                   </label>
                 </div>
                 <p className="text-white/60 text-xs md:text-base">

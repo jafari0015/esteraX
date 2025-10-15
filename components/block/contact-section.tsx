@@ -17,7 +17,7 @@ const ContactSection = () => {
           </h1>
           <div>
             <Button icon={<TfiArrowRight />} className="mt-14 text-3xl">
-              <span className="text-2xl">Let's Talk</span>
+              <span className="text-2xl">Let&apos;s Talk</span>
             </Button>
           </div>
         </div>

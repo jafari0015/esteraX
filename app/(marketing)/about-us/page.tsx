@@ -27,7 +27,7 @@ const AboutUs = () => {
         <p className="text-lg leading-relaxed mb-12 max-w-md">
           We've built enterprise AI for some of the world's biggest names,
           including The Coca-Cola Company, PwC, and Tesco. We are one of a
-          handful of companies that truly understand AI, and we’re known as
+          handful of companies that truly understand AI, and we are known as
           thought leaders in AI safety, ethics, and governance.
         </p>
       </div>
@@ -190,13 +190,13 @@ const AboutUs = () => {
                     in the field, he is also Chief AI Officer at{" "}
                     <span className="underline">WPP</span> and Computer Science
                     Entrepreneur-in-Residence at{" "}
-                    <span className="underline">UCL</span>. He holds a master's
-                    and a doctorate in AI from UCL.
+                    <span className="underline">UCL</span>He holds a master and
+                    a doctorate in AI from UCL.
                   </p>
 
                   <p>
-                    Satalia's co-founders include Dr Alastair Moore, an expert
-                    in machine learning and innovation, and Professor Anthony
+                    EsterX co-founders include Dr Alastair Moore, an expert in
+                    machine learning and innovation, and Professor Anthony
                     Finkelstein, the Chief Scientific Adviser for National
                     Security to the UK government.
                   </p>
@@ -235,8 +235,8 @@ const AboutUs = () => {
                   <LuGraduationCap className="h-8 w-8 " strokeWidth={1.5} />
                   <h3 className="text-3xl font-semibold ">Experience</h3>
                   <p className="text-base lg:text-lg leading-relaxed ">
-                    We have a higher standard of definition of "expert", with
-                    hundreds of collective years' experience across the AI stack
+                    We have a higher standard of definition of expert, with
+                    hundreds of collective years experience across the AI stack
                     and academia.
                   </p>
                 </div>
@@ -263,9 +263,8 @@ const AboutUs = () => {
               </div>
               <div>
                 <blockquote className="text-2xl lg:text-3xl xl:text-5xl font-normal leading-tight">
-                  "There's never been a more exciting time to be at the
-                  forefront of AI. Every industry is being transformed by the
-                  technology."
+                  There never been a more exciting time to be at the forefront
+                  of AI. Every industry is being transformed by the technology.
                 </blockquote>
                 <div className="mt-12 xl:mt-20">
                   <LearnMore2

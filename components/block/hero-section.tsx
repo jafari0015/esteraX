@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { TfiArrowRight } from "react-icons/tfi";
 import Button from "../ui/learn-more-btn";
 import HeroSectionSecond from "../ui/second-part-hero-section";
@@ -30,7 +30,7 @@ const HeroSection = () => {
     },
   };
 
-  const item: any = {
+  const item: Variants = {
     hidden: { opacity: 0, x: -200 },
     visible: {
       opacity: 1,
