@@ -85,6 +85,8 @@ export default function ResourcesSection() {
                     <Image
                       src={resource.imageUrl}
                       alt={resource.title}
+                      width={100}
+                      height={100}
                       className="rounded-full w-60 h-60 md:w-52 md:h-52 lg:w-68 lg:h-68 xl:w-80 xl:h-80"
                     />
                     <div className="mt-10">

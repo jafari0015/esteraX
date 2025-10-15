@@ -50,7 +50,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         <Header />
         <main>{children}</main>
-        <div className="relative h-[200vh]">
+        <div className="relative">
           {!isContactPage && <ContactSection />}
           <Footer />
         </div>

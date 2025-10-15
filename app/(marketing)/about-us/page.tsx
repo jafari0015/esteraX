@@ -15,6 +15,8 @@ const AboutUs = () => {
       <Image
         src="/gradient-background.svg"
         alt="Gradient Background Color"
+        width={100}
+        height={100}
         className="w-full h-[80vh] object-cover absolute inset-0 z-0"
       />
 
@@ -143,7 +145,12 @@ const AboutUs = () => {
           </p>
         </div>
         <div>
-          <Image src="/about-me.jpg.webp" alt="Person Stand" />
+          <Image
+            width={100}
+            height={100}
+            src="/about-me.jpg.webp"
+            alt="Person Stand"
+          />
         </div>
         <Line direction={"horizontal"} color="black" thickness={1} />
       </section>
@@ -172,6 +179,8 @@ const AboutUs = () => {
                   <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-full ">
                     <Image
                       src="/person.webp"
+                      width={100}
+                      height={100}
                       alt="Dr. Daniel Hulme"
                       className="h-full w-full object-cover"
                     />
@@ -259,6 +268,8 @@ const AboutUs = () => {
                 <Image
                   src="/person.webp"
                   alt="Dr. Daniel Hulme"
+                  width={100}
+                  height={100}
                   className="h-full w-full  object-cover"
                 />
               </div>

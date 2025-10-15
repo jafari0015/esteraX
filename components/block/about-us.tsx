@@ -38,7 +38,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   const variants: Variants = {
     hidden: { x: 0 },
     visible: {
-      x: 100,
+      x: "100%",
       transition: {
         duration: 1.8,
         ease: "easeInOut" as const,

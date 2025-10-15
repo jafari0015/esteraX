@@ -13,6 +13,8 @@ const GridWorkSection = () => {
           >
             <Image
               src={resource.imageUrl}
+              width={100}
+              height={100}
               alt={resource.title}
               className="rounded-full w-60 h-60 md:w-52 md:h-52 lg:w-68 lg:h-68 xl:w-80 xl:h-80"
             />

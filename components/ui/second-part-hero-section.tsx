@@ -19,13 +19,33 @@ const HeroSectionSecond = () => {
       </div>
 
       <div className="grid grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 xl:gap-20 flex-shrink-0">
-        <Image src="/logo-dfs.svg" alt="dfs" />
-        <Image src="/logo-ds-smith.svg" alt="ds-smith" />
-        <Image src="/logo-gigaclear.svg" alt="gigaclear" />
-        <Image src="/logo-odeon.svg" alt="odeon" />
-        <Image src="/logo-techdata.svg" alt="techdata" />
-        <Image src="/logo-tesco.svg" alt="tesco" />
-        <Image src="/The_Coca-Cola_Company_logo-new.svg" alt="coca-cola" />
+        <Image width={100} height={100} src="/logo-dfs.svg" alt="dfs" />
+        <Image
+          width={100}
+          height={100}
+          src="/logo-ds-smith.svg"
+          alt="ds-smith"
+        />
+        <Image
+          width={100}
+          height={100}
+          src="/logo-gigaclear.svg"
+          alt="gigaclear"
+        />
+        <Image width={100} height={100} src="/logo-odeon.svg" alt="odeon" />
+        <Image
+          width={100}
+          height={100}
+          src="/logo-techdata.svg"
+          alt="techdata"
+        />
+        <Image width={100} height={100} src="/logo-tesco.svg" alt="tesco" />
+        <Image
+          width={100}
+          height={100}
+          src="/The_Coca-Cola_Company_logo-new.svg"
+          alt="coca-cola"
+        />
       </div>
     </section>
   );

@@ -43,6 +43,8 @@ export default function ContactPage() {
       <Image
         src="/bg-our-work.svg"
         alt="Contact Background"
+        width={100}
+        height={100}
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
