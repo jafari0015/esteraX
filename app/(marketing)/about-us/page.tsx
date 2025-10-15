@@ -146,10 +146,12 @@ const AboutUs = () => {
         </div>
         <div>
           <Image
-            width={100}
-            height={100}
+            width={800}
+            height={800}
             src="/about-me.jpg.webp"
             alt="Person Stand"
+            className="w-full h-full z-0
+            "
           />
         </div>
         <Line direction={"horizontal"} color="black" thickness={1} />
@@ -270,7 +272,7 @@ const AboutUs = () => {
                   alt="Dr. Daniel Hulme"
                   width={100}
                   height={100}
-                  className="h-full w-full  object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
               <div>
@@ -278,7 +280,7 @@ const AboutUs = () => {
                   There never been a more exciting time to be at the forefront
                   of AI. Every industry is being transformed by the technology.
                 </blockquote>
-                <div className="mt-12 xl:mt-20">
+                <div className="mt-12 xl:mt-20 mb-10">
                   <LearnMore2
                     bgColor="black"
                     textColor="white"
