@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const HeroSectionSecond = () => {
@@ -18,13 +19,13 @@ const HeroSectionSecond = () => {
       </div>
 
       <div className="grid grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 xl:gap-20 flex-shrink-0">
-        <img src="/logo-dfs.svg" alt="dfs" />
-        <img src="/logo-ds-smith.svg" alt="ds-smith" />
-        <img src="/logo-gigaclear.svg" alt="gigaclear" />
-        <img src="/logo-odeon.svg" alt="odeon" />
-        <img src="/logo-techdata.svg" alt="techdata" />
-        <img src="/logo-tesco.svg" alt="tesco" />
-        <img src="/The_Coca-Cola_Company_logo-new.svg" alt="coca-cola" />
+        <Image src="/logo-dfs.svg" alt="dfs" />
+        <Image src="/logo-ds-smith.svg" alt="ds-smith" />
+        <Image src="/logo-gigaclear.svg" alt="gigaclear" />
+        <Image src="/logo-odeon.svg" alt="odeon" />
+        <Image src="/logo-techdata.svg" alt="techdata" />
+        <Image src="/logo-tesco.svg" alt="tesco" />
+        <Image src="/The_Coca-Cola_Company_logo-new.svg" alt="coca-cola" />
       </div>
     </section>
   );

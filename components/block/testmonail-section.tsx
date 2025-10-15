@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 import resources from "../../Data/resources";
+import Image from "next/image";
 export default function ResourcesSection() {
   return (
     <>
@@ -81,7 +82,7 @@ export default function ResourcesSection() {
               {resources.map((resource, index) => (
                 <SwiperSlide key={index}>
                   <div className="flex flex-col px-4 md:pl-10 w-full items-center justify-center md:border-l-[1px] pt-20 relative">
-                    <img
+                    <Image
                       src={resource.imageUrl}
                       alt={resource.title}
                       className="rounded-full w-60 h-60 md:w-52 md:h-52 lg:w-68 lg:h-68 xl:w-80 xl:h-80"

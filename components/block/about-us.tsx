@@ -2,7 +2,7 @@
 import { motion, useInView, Variants } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import LearnMore2 from "../ui/learn-more-2";
-
+import Image from "next/image";
 const AboutSection: React.FC<AboutSectionProps> = ({
   id,
   title = "",
@@ -14,7 +14,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   const ref = useRef<HTMLElement | null>(null);
   const inView = useInView(ref, { amount: 0.1 });
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     if (inView) setIsVisible(true);
@@ -30,7 +29,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
         Math.max((windowHeight - rect.top) / (rect.height + windowHeight), 0),
         1
       );
-      setScrollProgress(progress);
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();

@@ -1,5 +1,6 @@
 import Line from "@/components/Layout/line";
 import LearnMore2 from "@/components/ui/learn-more-2";
+import Image from "next/image";
 import React from "react";
 import {
   LuUserRoundSearch,
@@ -11,7 +12,7 @@ import {
 const AboutUs = () => {
   return (
     <section className="relative min-h-screen text-white overflow-hidden px-4 md:px-0">
-      <img
+      <Image
         src="/gradient-background.svg"
         alt="Gradient Background Color"
         className="w-full h-[80vh] object-cover absolute inset-0 z-0"
@@ -25,7 +26,7 @@ const AboutUs = () => {
           Enterprise AI since 2008
         </h1>
         <p className="text-lg leading-relaxed mb-12 max-w-md">
-          We've built enterprise AI for some of the world's biggest names,
+          We have built enterprise AI for some of the world biggest names,
           including The Coca-Cola Company, PwC, and Tesco. We are one of a
           handful of companies that truly understand AI, and we are known as
           thought leaders in AI safety, ethics, and governance.
@@ -142,7 +143,7 @@ const AboutUs = () => {
           </p>
         </div>
         <div>
-          <img src="/about-me.jpg.webp" alt="Person Stand" />
+          <Image src="/about-me.jpg.webp" alt="Person Stand" />
         </div>
         <Line direction={"horizontal"} color="black" thickness={1} />
       </section>
@@ -169,7 +170,7 @@ const AboutUs = () => {
               <div className="space-y-8">
                 <div className="flex items-start gap-6">
                   <div className="relative h-40 w-40 flex-shrink-0 overflow-hidden rounded-full ">
-                    <img
+                    <Image
                       src="/person.webp"
                       alt="Dr. Daniel Hulme"
                       className="h-full w-full object-cover"
@@ -255,7 +256,7 @@ const AboutUs = () => {
 
             <div className="mt-32 flex items-center xl:ml-[32rem] flex-col md:flex-row gap-16">
               <div className="relative w-52 h-52 md:w-36 md:h-36 lg:h-48 lg:w-48 xl:h-60 xl:w-60 flex-shrink-0 overflow-hidden rounded-full ">
-                <img
+                <Image
                   src="/person.webp"
                   alt="Dr. Daniel Hulme"
                   className="h-full w-full  object-cover"

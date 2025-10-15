@@ -2,9 +2,7 @@
 
 import AboutUs from "@/components/block/about-us";
 import ProjectSection from "@/components/block/case-studies";
-import ContactSection from "@/components/block/contact-section";
 import FAQSection from "@/components/block/faq-section";
-import Footer from "@/components/block/footer-section";
 import HeroSection from "@/components/block/hero-section";
 import Services from "@/components/block/services-section";
 import Testmonails from "@/components/block/testmonail-section";

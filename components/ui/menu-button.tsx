@@ -11,7 +11,6 @@ const AnimatedHamburgerButton: React.FC<AnimatedHamburgerButtonProps> = ({
   onClick,
   isOpen,
 }) => {
-  const [active, setActive] = useState(false);
   return (
     <MotionConfig
       transition={{

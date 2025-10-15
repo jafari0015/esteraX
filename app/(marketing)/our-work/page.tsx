@@ -1,13 +1,13 @@
 import WorkComponents from "@/components/ui/ou-work";
 import GridWorkSection from "@/components/ui/work-grid-section";
 import React from "react";
-
+import Image from "next/image";
 const OurWork = () => {
   return (
     <section>
       {" "}
       <section className="relative min-h-[70vh] text-white">
-        <img
+        <Image
           src="/bg-our-work.svg"
           alt="Gradient Background Color"
           className="w-full h-[40vh] xl:h-[80vh] object-cover absolute inset-0 z-0"

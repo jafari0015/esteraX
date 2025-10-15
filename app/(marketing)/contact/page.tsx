@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { TfiArrowRight } from "react-icons/tfi";
+import Image from "next/image";
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
@@ -39,7 +40,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <img
+      <Image
         src="/bg-our-work.svg"
         alt="Contact Background"
         className="absolute inset-0 w-full h-full object-cover z-0"

@@ -4,8 +4,6 @@ import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 import React, { useEffect, useState, useRef } from "react";
 import Line from "../Layout/line";
 import DrawOutlineButton from "./draw-outline-button";
-import LearnMore2 from "./learn-more-2";
-
 const OurWork = [
   {
     subTitle: "AI for marketing",
