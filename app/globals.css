@@ -1,10 +1,9 @@
 @import 'tailwindcss';
 
-
 :root {
-    --primary: #140d25;
-    --secondary: #140d25;
-    --foreground: #ffffff;
+  --primary: #140d25;
+  --secondary: #000000;
+  --foreground: #ffffff;
 }
 
 body {
@@ -13,7 +12,7 @@ body {
 
 @layer base {
     .learnBtn {
-        @apply bg-transparent text-[#ffffff] flex items-center justify-center gap-6 text-2xl transition-all duration-700 cursor-pointer py-0.5 font-medium hover:bg-[#ffffff] hover:text-[#140d25] rounded-full pl-1 pr-8;
+        @apply bg-transparent text-primary flex items-center justify-center gap-6 text-2xl transition-all duration-700 cursor-pointer py-0.5 font-medium hover:bg-foreground hover:text-primary rounded-full pl-1 pr-8;
     }
 }
 .scrol-thin::-webkit-scrollbar {
@@ -25,4 +24,10 @@ body {
 }
 ::-webkit-scrollbar {
     display: none;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-foreground: var(--foreground);
 }

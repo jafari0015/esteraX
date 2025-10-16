@@ -17,8 +17,7 @@ const services = [
 const pages = [
   { title: "About", url: "/about-us" },
   { title: "Our Work", url: "/our-work" },
-  { title: "AI Thought", url: "/ai-thought" },
-  { title: "Careers", url: "/careers" },
+  { title: "Blog", url: "/blog" },
   { title: "Contact", url: "/contact" },
 ];
 
@@ -90,7 +89,7 @@ const Header: React.FC = () => {
   return (
     <motion.header
       className={`fixed w-full top-0 left-0 z-40 backdrop-blur-md transition-all duration-500
-        ${darkStyle ? "bg-white/20 " : "bg-[#140d25]/20"}
+        ${darkStyle ? "bg-foreground/20 " : "bg-primary/20"}
       `}
       initial={{ y: -100 }}
       animate={{ y: showHeader ? 0 : -102 }}
@@ -99,7 +98,7 @@ const Header: React.FC = () => {
       <div className="flex justify-between items-center md:py-[5px] lg:py-[16px] md:px-5 px-2  relative z-50">
         <HeaderLoader
           duration={2}
-          className="hidden md:flex text-white -ml-1 text-2xl"
+          className="hidden md:flex text-foreground -ml-1 text-2xl"
         />
 
         <div className="lg:ml-32 md:ml-16">
@@ -129,7 +128,7 @@ const Header: React.FC = () => {
       {/* Border Bottom Header  */}
       <motion.div
         className={`absolute bottom-0 left-0 h-[1px] origin-left w-full transition-colors duration-500
-            ${darkStyle ? "bg-black" : "bg-white"}`}
+            ${darkStyle ? "bg-black" : "bg-foreground"}`}
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -150,18 +149,16 @@ const Header: React.FC = () => {
             exit="exit"
           >
             <div
-              className={`flex md:flex-row flex-col items-start md:items-center  xl:justify-between xl:mx-20 mt-20 ${
-                darkStyle ? "text-black" : "text-white"
-              }`}
+              className={`flex md:flex-row flex-col items-start md:items-center  xl:justify-between xl:mx-20 mt-20 ${darkStyle ? "text-black" : "text-foreground"
+                }`}
             >
               <div className="md:text-center ml-5 md:ml-0  lg:ml-10">
                 <h1 className="text-4xl md:text-4xl xl:text-6xl mt-4 font-bold mb-2">
                   EsteraX
                 </h1>
                 <p
-                  className={`text-xl md:text-xs lg:text-base ${
-                    darkStyle ? "text-gray-700" : "text-gray-300"
-                  }`}
+                  className={`text-xl md:text-xs lg:text-base ${darkStyle ? "text-gray-700" : "text-gray-300"
+                    }`}
                 >
                   We build innovative digital solutions, <br /> from web apps to
                   AI-driven platforms.
@@ -177,9 +174,8 @@ const Header: React.FC = () => {
                   showLine={true}
                   arrowSize="w-5 h-5"
                   darkStyle={false}
-                  className={`text-lg md:text-base lg:text-xl md:leading-6 lg:leading-10 ${
-                    darkStyle ? "text-black" : "text-white"
-                  }`}
+                  className={`text-lg md:text-base lg:text-xl md:leading-6 lg:leading-10 ${darkStyle ? "text-black" : "text-foreground"
+                    }`}
                   onLinkClick={handleLinkClick}
                 />
                 <NavSection
@@ -188,11 +184,10 @@ const Header: React.FC = () => {
                   setHovered={setHovered}
                   showLine={false}
                   arrowSize="w-6 h-6"
-                  textColor={darkStyle ? "text-black" : "text-white"}
+                  textColor={darkStyle ? "text-black" : "text-foreground"}
                   darkStyle={false}
-                  className={`text-2xl lg:text-4xl md:text-2xl md:leading-10 lg:leading-14 font-semibold ${
-                    darkStyle ? "text-black" : "text-white"
-                  }`}
+                  className={`text-2xl lg:text-4xl md:text-2xl md:leading-10 lg:leading-14 font-semibold ${darkStyle ? "text-black" : "text-foreground"
+                    }`}
                   onLinkClick={handleLinkClick}
                 />
               </div>

@@ -43,7 +43,7 @@ const PercentageLoader: React.FC<LoaderProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
-            className="border-t-[1px] border-white"
+            className="border-t-[1px] border-foreground"
           >
             {percent}%
           </motion.span>

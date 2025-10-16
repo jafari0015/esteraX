@@ -15,8 +15,8 @@ const FAQSection = () => {
 
   return (
     <>
-      <section className="relative bg-white w-full min-h-[100vh] md:min-h-[80vh] xl:min-h-screen xl:pb-80 overflow-hidden flex">
-        <h1 className="text-black uppercase absolute text-xl mt-4 md:mt-10 ml-4 md:ml-8 md:-rotate-90">
+      <section className="relative bg-foreground w-full min-h-[100vh] md:min-h-[80vh] xl:min-h-screen xl:pb-80 overflow-hidden flex">
+        <h1 className="text-secondary uppercase absolute text-xl mt-4 md:mt-10 ml-4 md:ml-8 md:-rotate-90">
           FAQ
         </h1>
         <div className="max-w-2xl mt-[500px] lg:max-w-3xl  xl:h-[800px] md:mt-40 xl:mt-80  xl:ml-48 z-0 absolute">
@@ -36,7 +36,7 @@ const FAQSection = () => {
           </h2>
         </div>
         <div className="relative -mt-20 md:mt-60 xl:mt-96 z-10 flex w-full items-center justify-end overflow-hidden">
-          <div className="w-full md:ml-[250px] lg:ml-[350px] xl:ml-[900px] border-l border-b bg-white xl:bg-transparent">
+          <div className="w-full md:ml-[250px] lg:ml-[350px] xl:ml-[600px] 2xl:ml-[900px] border-l border-b bg-foreground 2xl:bg-transparent">
             {faqData.map((item, index) => (
               <motion.div key={index} className="mb-4">
                 <Line direction={"horizontal"} thickness={1} />
@@ -83,7 +83,7 @@ const FAQSection = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="py-2 text-black/70 text-sm lg:text-lg pl-5 md:pl-14 xl:pl-20">
+                      <p className="py-2 text-secondary/70 text-sm lg:text-lg pl-5 md:pl-14 xl:pl-20">
                         {item.a}
                       </p>
                       <Link href={item.url} className="ml-20">

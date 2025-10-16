@@ -11,7 +11,7 @@ import {
 
 const AboutUs = () => {
   return (
-    <section className="relative min-h-screen text-white overflow-hidden px-4 md:px-0">
+    <section className="relative min-h-screen text-foreground overflow-hidden px-4 md:px-0">
       <Image
         src="/gradient-background.svg"
         alt="Gradient Background Color"
@@ -35,13 +35,13 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <h1 className="text-2xl text-white absolute  md:-rotate-90 md:pl-0 md:top-[150vh]">
+      <h1 className="text-2xl text-foreground absolute  md:-rotate-90 md:pl-0 md:top-[150vh]">
         {" "}
         Our Mission
       </h1>
       <section className="relative">
-        <div className="hidden xl:flex absolute left-0 w-full px-6 md:px-0 h-28 top-10 z-0 bg-gradient-to-t from-[#140d25]/90 via-[#140d25]/80"></div>
-        <div className="text-white grid md:grid-cols-2 md:pl-24  lg:pl-36 xl:pl-42 pt-28 md:pt-48 ">
+        <div className="hidden xl:flex absolute left-0 w-full px-6 md:px-0 mt-8 h-28 top-10 z-0 bg-gradient-to-t from-primary/90 via-prifrom-primary/80"></div>
+        <div className="text-foreground grid md:grid-cols-2 md:pl-24  lg:pl-36 xl:pl-42 pt-28 md:pt-48 ">
           <div className="max-w-[350px] md:max-w-xs lg:max-w-sm xl:max-w-md ">
             <h1 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl">
               We want to create a future where everyone is free to live beyond
@@ -59,7 +59,7 @@ const AboutUs = () => {
               <Line
                 direction={"horizontal"}
                 thickness={1}
-                color="white"
+                color="foreground"
                 width={400}
               />
             </div>
@@ -67,7 +67,7 @@ const AboutUs = () => {
               <Line
                 direction={"horizontal"}
                 thickness={1}
-                color="white"
+                color="foreground"
                 width={300}
               />
             </div>
@@ -100,7 +100,7 @@ const AboutUs = () => {
               <Line
                 direction={"horizontal"}
                 thickness={1}
-                color="white"
+                color="foreground"
                 width={400}
               />
             </div>
@@ -108,7 +108,7 @@ const AboutUs = () => {
               <Line
                 direction={"horizontal"}
                 thickness={1}
-                color="white"
+                color="foreground"
                 width={300}
               />
             </div>
@@ -157,24 +157,24 @@ const AboutUs = () => {
         <Line direction={"horizontal"} color="black" thickness={1} />
       </section>
 
-      <section className="min-h-screen bg-white -ml-6 -mr-6 md:ml-0 md:mr-0">
+      <section className="min-h-screen bg-foreground -ml-6 -mr-6 md:ml-0 md:mr-0">
         <div className="hidden md:flex pl-18 lg:pl-25 ">
           <Line direction={"vertical"} thickness={1} color="black" />
         </div>
         <div className="pt-20 md:pt-40 xl:pt-60 pl-6 md:pl-35 xl:pl-48 max-w-xl lg:max-w-2xl xl:max-w-6xl">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-black font-medium">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-secondary font-medium">
             Our people have extensive experience at top-tier technology firms
             and leading academic institutions.
           </h1>
         </div>
         <div className="min-h-screen relative">
-          <div className=" absolute md:-rotate-90 ml-5 md:-ml-28 -mt-72">
-            <h2 className="text-xl font-medium tracking-widest text-black">
+          <div className=" absolute md:-rotate-90 ml-5 md:-ml-28 -mt-80">
+            <h2 className="text-xl font-medium tracking-widest text-secondary">
               OUR PEOPLE
             </h2>
           </div>
 
-          <div className="md:pl-25 lg:pl-32 xl:px-38 px-10 mt-40 text-black mr-10">
+          <div className="md:pl-25 lg:pl-32 xl:px-38 px-10 mt-40 text-secondary mr-10">
             <div className="grid gap-1 xl:grid-cols-2 md:gap-24">
               <div className="space-y-8">
                 <div className="flex items-start gap-6">
@@ -282,12 +282,12 @@ const AboutUs = () => {
                 </blockquote>
                 <div className="mt-12 xl:mt-20 mb-10">
                   <LearnMore2
-                    bgColor="black"
+                    bgColor="secondary"
                     textColor="white"
                     arrowBg="white"
-                    arrowColor="black"
+                    arrowColor="secondary"
                     hoverBg="white"
-                    hoverText="black"
+                    hoverText="secondary"
                   >
                     Join Our Team
                   </LearnMore2>

@@ -4,22 +4,28 @@ import { AnimatePresence, motion, useInView, Variants } from "framer-motion";
 import React, { useEffect, useState, useRef } from "react";
 import Line from "../Layout/line";
 import DrawOutlineButton from "./draw-outline-button";
-const OurWork = [
-  {
-    subTitle: "AI for marketing",
-    title: "Last mile route optimisation for DFS",
-    description:
-      "Satalia helped DFS transform their last-mile delivery offering with last-mile delivery technology.",
-    percentage: "18%",
-    subDescription: "Total Saving across the workstream",
-  },
-];
 
-const WorkComponents = ({ imageSrc = "" }) => {
+export type WorkItem = {
+  subTitle: string;
+  title: string;
+  description: string;
+  percentage: string;
+  subDescription: string;
+};
+
+type WorkComponentsProps = {
+  imageSrc?: string;
+  workItems: WorkItem[];
+};
+
+const WorkComponents: React.FC<WorkComponentsProps> = ({
+  imageSrc = "",
+  workItems,
+}) => {
   const ref = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const inView = useInView(ref, { amount: 0.1 });
-  const [activeIndex] = useState(0);
+  const [activeIndex] = useState(0); // Can later be made dynamic for carousel behavior
 
   useEffect(() => {
     setIsVisible(inView);
@@ -39,34 +45,38 @@ const WorkComponents = ({ imageSrc = "" }) => {
   return (
     <section
       ref={ref}
-      className="xl:min-h-[70vh] h-full w-full bg-white flex flex-col md:flex-row justify-between border-b xl:gap-48  text-black md:pl-18 lg:pl-25"
+      className="xl:min-h-[70vh] h-full w-full bg-foreground flex flex-col md:flex-row justify-between border-b xl:gap-48 text-secondary md:pl-18 lg:pl-25"
     >
       <div>
         <div className="relative h-full md:w-[80%] xl:w-[145%] overflow-hidden">
-          <motion.img
-            src={imageSrc}
-            alt="Our Mission"
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.1 }}
-            animate={isVisible ? { scale: 1 } : { scale: 1.1 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute top-0 left-0 w-full h-full bg-white z-10"
-            variants={revealVariant}
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-          />
+          {imageSrc && (
+            <>
+              <motion.img
+                src={imageSrc}
+                alt="Our Work"
+                className="w-full h-full object-cover"
+                initial={{ scale: 1.1 }}
+                animate={isVisible ? { scale: 1 } : { scale: 1.1 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute top-0 left-0 w-full h-full bg-foreground z-10"
+                variants={revealVariant}
+                initial="hidden"
+                animate={isVisible ? "visible" : "hidden"}
+              />
+            </>
+          )}
         </div>
       </div>
 
       <div className="w-full h-full flex py-8 xl:py-0 xl:mt-30 flex-col xl:ml-40 mr-20 lg:mr-32 px-6 md:px-0">
         <div className="flex flex-col">
-          {OurWork.map((item, index) => (
+          {workItems.map((item, index) => (
             <React.Fragment key={index}>
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={activeIndex}
+                  key={activeIndex + index}
                   initial={{ opacity: 0, x: "20vw" }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: "-20vw" }}
@@ -88,7 +98,7 @@ const WorkComponents = ({ imageSrc = "" }) => {
                       width={700}
                       color="gray"
                     />
-                    <h1 className="md:text-[100px]  text-[70px] lg:text-[150px] font-bold font-sans leading-none">
+                    <h1 className="md:text-[100px] text-[70px] lg:text-[150px] font-bold font-sans leading-none">
                       {item.percentage}
                     </h1>
                     <p className="mt-10 text-base lg:text-xl">

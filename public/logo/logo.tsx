@@ -36,7 +36,7 @@ export default function Logo() {
                 transition={{ duration: 0.2 }}
               >
                 <FaConnectdevelop
-                  className="w-6 h-6 text-white"
+                  className="w-6 h-6 text-foreground "
                   strokeWidth={2}
                 />
               </motion.div>
@@ -51,7 +51,7 @@ export default function Logo() {
           >
             <div className="relative">
               <motion.span
-                className="text-white select-none text-4xl relative z-10"
+                className="text-foreground select-none text-4xl relative z-10"
                 style={{
                   fontFamily: '"Afacad", sans-serif',
                   fontWeight: 700,
@@ -66,7 +66,7 @@ export default function Logo() {
             </div>
 
             <span
-              className="text-white tracking-tight select-none text-4xl"
+              className="text-foreground tracking-tight select-none text-4xl"
               style={{
                 fontFamily: '"Afacad", sans-serif',
                 fontWeight: 600,
@@ -89,11 +89,10 @@ export default function Logo() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <div className="absolute border border-white/90 rotate-[45deg] w-8 h-8" />
                 </motion.div>
 
                 <span
-                  className="text-white select-none text-4xl relative z-10"
+                  className="text-foreground select-none text-4xl relative z-10"
                   style={{
                     fontFamily: '"Afacad", sans-serif',
                     fontWeight: 700,

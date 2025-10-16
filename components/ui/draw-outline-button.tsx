@@ -47,7 +47,7 @@ const DrawOutlineButton: React.FC<DrawOutlineButtonProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`group relative flex items-center justify-center gap-4 text-xl cursor-pointer mt-5 md:mt-10
-        rounded-full overflow-visible text-black transition-all duration-300 ease-in-out min-w-[180px] min-h-[50px] ${className}`}
+        rounded-full overflow-visible text-secondary transition-all duration-300 ease-in-out min-w-[180px] min-h-[50px] ${className}`}
     >
       <svg
         width={width}
@@ -63,14 +63,14 @@ const DrawOutlineButton: React.FC<DrawOutlineButtonProps> = ({
           ry={rx}
           fill="none"
           stroke={strokeColor}
-          strokeWidth="1"
+          strokeWidth="0.5"
           strokeDasharray={perimeter}
           strokeDashoffset={hovered ? 0 : perimeter}
           style={{ transition: "stroke-dashoffset 0.8s ease-in-out" }}
         />
       </svg>
 
-      <span className="bg-black p-2 -ml-4 rounded-full text-white transition-transform duration-300 group-hover:-rotate-45 z-10 flex items-center justify-center">
+      <span className="bg-secondary p-2 -ml-6 rounded-full text-foreground transition-transform duration-300 group-hover:-rotate-45 z-10 flex items-center justify-center">
         {icon || <TfiArrowRight />}
       </span>
 

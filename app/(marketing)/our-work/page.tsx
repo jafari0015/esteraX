@@ -1,12 +1,16 @@
 import WorkComponents from "@/components/ui/ou-work";
-import GridWorkSection from "@/components/ui/work-grid-section";
+import GridWorkSection, {
+  ResourceItem,
+} from "@/components/ui/work-grid-section";
 import React from "react";
 import Image from "next/image";
+import resourcesData from "@/Data/resources";
 const OurWork = () => {
+  const resources: ResourceItem[] = resourcesData;
   return (
     <section>
       {" "}
-      <section className="relative min-h-[70vh] text-white">
+      <section className="relative min-h-[70vh] text-foreground">
         <Image
           src="/bg-our-work.svg"
           width={100}
@@ -39,10 +43,25 @@ const OurWork = () => {
         </div>
       </section>
       <div>
-        <WorkComponents imageSrc="/our-missoin.webp" />
+        <WorkComponents
+          imageSrc="/person.webp"
+          workItems={[
+            {
+              subTitle: "AI for marketing",
+              title: "Last mile route optimisation for DFS",
+              description:
+                "Satalia helped DFS transform their last-mile delivery offering with last-mile delivery technology.",
+              percentage: "18%",
+              subDescription: "Total Saving across the workstream",
+            },
+          ]}
+        />
       </div>
       <div>
-        <GridWorkSection />
+        <GridWorkSection
+          resources={resources}
+          containerClassName="lg:px-25 md:px-18"
+        />
       </div>
     </section>
   );

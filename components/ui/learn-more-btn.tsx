@@ -23,7 +23,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       {icon && (
         <motion.div
-          className="bg-white text-[#140d25] p-2 rounded-full"
+          className="bg-foreground text-[#140d25] p-2 rounded-full"
           variants={{
             hover: {
               backgroundColor: "#140d25",
@@ -56,7 +56,7 @@ const Button: React.FC<ButtonProps> = ({
       )}
 
       <motion.span
-        className="text-white text-xl font-medium tracking-wide"
+        className="text-foreground text-xl font-medium tracking-wide"
         variants={{
           hover: {
             x: 2,

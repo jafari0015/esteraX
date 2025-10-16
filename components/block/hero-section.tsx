@@ -64,9 +64,9 @@ const HeroSection = () => {
       </div>
 
       <div className="min-h-[60vh] md:min-h-[56vh] lg:min-h-[60vh] xl:min-h-0"></div>
-      <div className="absolute -bottom-40 md:-bottom-150 xl:-bottom-40 left-0 w-full h-full z-20 bg-gradient-to-t from-[#140d25] via-[#140d25]"></div>
+      <div className="absolute -bottom-40 md:-bottom-150 xl:-bottom-40 left-0 w-full h-full z-20 bg-gradient-to-t from-primary via-primary"></div>
       <motion.div
-        className="relative z-20 flex flex-col pl-8 md:pl-26 lg:pl-34 xl:pl-40 xl:pt-72 text-white max-w-7xl"
+        className="relative z-20 flex flex-col pl-8 md:pl-26 lg:pl-34 xl:pl-40 xl:pt-72 text-foreground max-w-7xl"
         variants={HeroText}
         initial="hidden"
         animate={showContent ? "visible" : "hidden"}

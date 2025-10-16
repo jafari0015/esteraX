@@ -1,14 +1,9 @@
-import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
-const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "thumbs.dreamstime.com" },
-      { protocol: "https", hostname: "i.etsystatic.com" },
-      { protocol: "https", hostname: "www.shutterstock.com" },
-      { protocol: "https", hostname: "img.freepik.com" },
-    ],
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 };
 
-export default nextConfig;
+
+export default (nextConfig);

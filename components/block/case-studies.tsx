@@ -9,16 +9,15 @@ import DrawOutlineButton from "../ui/draw-outline-button";
 import Projects from "../../Data/projects";
 const ImageGallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
   const currentItem = Projects[activeIndex];
 
   return (
     <>
-      <h1 className="text-black uppercase absolute text-xl mt-5 ml-4 md:mt-24 md:-ml-4 md:-rotate-90">
+      <h1 className="text-secondary uppercase absolute text-xl mt-5 ml-4 md:mt-24 md:-ml-4 md:-rotate-90">
         Case Studies
       </h1>
 
-      <div className="flex flex-col md:flex-row xl:gap-30 bg-white md:pl-18 lg:pl-25 h-full">
+      <div className="flex flex-col md:flex-row lg:gap-2 2xl:gap-30 bg-white md:pl-18 lg:pl-25 h-full">
         <Line direction={"vertical"} color="black" thickness={1} />
         <div className="w-full xl:min-h-screen relative overflow-hidden flex justify-center items-center">
           <AnimatePresence mode="sync">
@@ -53,20 +52,18 @@ const ImageGallery = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setActiveIndex(index)}
-                    className={`cursor-pointer transition-all duration-500 ${
-                      isActive
-                        ? "scale-125 opacity-100 z-10"
-                        : "scale-90  z-0 hover:opacity-100"
-                    }`}
+                    className={`cursor-pointer transition-all duration-500 ${isActive
+                      ? "scale-125 opacity-100 z-10 lg:order-1"
+                      : "scale-90  z-0 hover:opacity-100 lg:order-2"
+                      }`}
                   >
                     <Image
                       src={item.avatar}
                       alt={`Avatar ${index + 1}`}
                       width={150}
                       height={150}
-                      className={`rounded-full object-cover transition-all duration-500 ${
-                        isActive ? "shadow-2xl" : "grayscale hover:grayscale-0"
-                      }`}
+                      className={`rounded-full object-cover transition-all duration-500 ${isActive ? "shadow-2xl" : "grayscale hover:grayscale-0"
+                        }`}
                     />
                   </motion.div>
                 );
@@ -107,7 +104,7 @@ const ImageGallery = () => {
               </motion.div>
             </AnimatePresence>
 
-            <div className="mt-10 text-base lg:text-lg mb-10 lg:ml-5">
+            <div className="mt-10 text-sm lg:text-lg mb-10 lg:ml-5">
               <LearnMore2
                 bgColor="black"
                 textColor="white"
@@ -115,6 +112,7 @@ const ImageGallery = () => {
                 arrowColor="black"
                 hoverBg="white"
                 hoverText="black"
+                className="text-sm"
               >
                 More Case Studies
               </LearnMore2>

@@ -1,10 +1,27 @@
 import React from "react";
 import DrawOutlineButton from "./draw-outline-button";
-import resources from "@/Data/resources";
 import Image from "next/image";
-const GridWorkSection = () => {
+
+// Type for a single resource item
+export type ResourceItem = {
+  imageUrl: string;
+  title: string;
+  description: string;
+  date: string;
+};
+
+// Props for the reusable GridWorkSection
+type GridWorkSectionProps = {
+  resources: ResourceItem[];
+  containerClassName?: string; // optional extra classes for outer div
+};
+
+const GridWorkSection: React.FC<GridWorkSectionProps> = ({
+  resources,
+  containerClassName = "",
+}) => {
   return (
-    <div className="bg-white text-black lg:px-25 border-l md:px-18">
+    <div className={`bg-white text-secondary border-l ${containerClassName}`}>
       <div className="grid md:grid-cols-2 xl:grid-cols-3">
         {resources.map((resource, index) => (
           <div
@@ -18,12 +35,12 @@ const GridWorkSection = () => {
               alt={resource.title}
               className="rounded-full w-60 h-60 md:w-52 md:h-52 lg:w-68 lg:h-68 xl:w-80 xl:h-80"
             />
-            <div className="mt-10">
+            <div className="mt-10 text-center md:text-left">
               <span className="text-base pt-20 pb-5">{resource.date}</span>
               <h1 className="text-3xl lg:text-4xl xl:text-5xl font-semibold mb-8 md:h-[150px]">
                 {resource.title}
               </h1>
-              <p className="text-lg lg:text-xl lg:pt-10  md:h-[200px]">
+              <p className="text-lg lg:text-xl lg:pt-10 md:h-[200px]">
                 {resource.description}
               </p>
             </div>

@@ -5,14 +5,14 @@ import { TfiArrowRight } from "react-icons/tfi";
 
 const ContactSection = () => {
   return (
-    <>
+    <section className="relative">
       <div className="hidden xl:flex lg:ml-25">
-        <Line direction="vertical" thickness={1} color="white" />
+        <Line direction="vertical" thickness={1} color="white" zIndex={50} mx-auto />
       </div>
 
-      <section className="flex flex-col md:flex-row justify-between items-center w-full min-h-[70vh] sticky top-0 xl:min-h-screen py-10">
+      <section className=" z-10 flex flex-col md:flex-row justify-between sticky top-0 items-center w-full min-h-[70vh] xl:min-h-screen py-10">
         <div className="flex-1 flex flex-col justify-center px-6 md:pl-30 xl:pl-52 mt-10 md:mt-0 md:text-left order-2 md:order-1">
-          <h1 className="text-5xl md:text-5xl xl:text-7xl text-white leading-tight">
+          <h1 className="text-5xl md:text-5xl xl:text-7xl text-foreground leading-tight">
             Ask us how AI can benefit your business.
           </h1>
           <div>
@@ -54,7 +54,7 @@ const ContactSection = () => {
           </svg>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

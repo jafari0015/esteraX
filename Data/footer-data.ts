@@ -1,17 +1,5 @@
 export const footerSections = [
   {
-    title: "What we do",
-    links: [
-      { href: "/services/marketing", label: "AI For Marketing" },
-      {
-        href: "/services/ai-for-logistics",
-        label: "AI for transport, supply chain & logistics",
-      },
-      { href: "/services/ai-strategy", label: "AI strategy & consulting" },
-      { href: "/thought-leadership", label: "AI thought leadership" },
-    ],
-  },
-  {
     title: "",
     links: [
       { href: "/about-us", label: "About Us" },
@@ -39,24 +27,9 @@ export const addressSections = [
       { text: "United Kingdom" },
     ],
   },
-  {
-    title: "Kaunas",
-    lines: [
-      { text: "labas@satalia.com", href: "mailto:labas@satalia.com" },
-      { text: "K. Donelaičio g. 60" },
-      { text: "Kaunas LT-44248" },
-      { text: "Lithuania" },
-    ],
-  },
-  {
-    title: "WPP plc",
-    lines: [
-      { text: "Sea Containers" },
-      { text: "18 Upper Ground" },
-      { text: "London SE1 9GL" },
-      { text: "United Kingdom" },
-    ],
-  },
+  
+];
+export const contacts =[
   {
     title: "Contact",
     lines: [
@@ -64,4 +37,4 @@ export const addressSections = [
       { text: "+44 (0)20 7282 4600", href: "tel:+442072824600" },
     ],
   },
-];
+]

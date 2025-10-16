@@ -31,7 +31,7 @@ const NavSection: React.FC<NavSectionProps> = ({
         >
           <div
             className={`h-[1px] mb-5 md:mb-10 lg:w-72 w-96  md:w-50 ml-5 ${
-              darkStyle ? "bg-black" : "bg-white"
+              darkStyle ? "bg-secondary" : "bg-foreground"
             }`}
           />
         </motion.div>

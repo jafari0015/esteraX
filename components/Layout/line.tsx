@@ -26,8 +26,8 @@ const Line: React.FC<LineProps> = ({
       direction === "horizontal"
         ? width || length
         : typeof thickness === "number"
-        ? `${thickness}px`
-        : thickness,
+          ? `${thickness}px`
+          : thickness,
     height:
       direction === "horizontal"
         ? typeof thickness === "number"

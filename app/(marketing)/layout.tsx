@@ -32,7 +32,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         infinite: false,
       }}
     >
-      <div className="flex flex-col relative min-h-screen h-full overflow-hidden bg-[#140d25]">
+      <div className="flex flex-col relative min-h-screen h-full overflow-hidden bg-primary">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -50,10 +50,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         <Header />
         <main>{children}</main>
-        <div className="relative">
-          {!isContactPage && <ContactSection />}
-          <Footer />
-        </div>
+        {!isContactPage && <ContactSection />}
+        <Footer />
       </div>
     </ReactLenis>
   );
