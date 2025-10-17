@@ -4,7 +4,7 @@ import AboutUs from "@/components/block/about-us";
 import ProjectSection from "@/components/block/case-studies";
 import FAQSection from "@/components/block/faq-section";
 import HeroSection from "@/components/block/hero-section";
-import Services from "@/components/block/services-section";
+import HorizontalAccordion from "@/components/block/services-section";
 import Testmonails from "@/components/block/testmonail-section";
 import React, { useRef } from "react";
 
@@ -26,7 +26,7 @@ const Home = () => {
         ]}
         buttonText="Learn More"
       />
-      <Services />
+      <HorizontalAccordion />
       <div id="project-section" ref={projectRef}>
         <ProjectSection />
       </div>

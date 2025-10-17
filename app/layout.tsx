@@ -11,6 +11,47 @@ export const metadata: Metadata = {
   title: "EsteraX",
   description:
     "EsteraX is a creative software company turning ideas into powerful digital experiences.",
+  keywords: ["EsteraX", "Software Company", "Digital Experiences", "Creative Solutions"],
+  authors: [{ name: "EsteraX Team", url: "https://www.esteraX.com" }],
+  creator: "EsteraX",
+  publisher: "EsteraX",
+  metadataBase: new URL("https://www.esteraX.com"),
+  themeColor: "#000000", // dark theme color
+  colorScheme: "dark",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    title: "EsteraX",
+    description:
+      "EsteraX is a creative software company turning ideas into powerful digital experiences.",
+    url: "https://www.esteraX.com",
+    siteName: "EsteraX",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "EsteraX - Creative Software Company",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EsteraX",
+    description:
+      "EsteraX is a creative software company turning ideas into powerful digital experiences.",
+    creator: "@EsteraX",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
 };
 
 export default function RootLayout({

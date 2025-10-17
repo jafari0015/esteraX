@@ -29,17 +29,6 @@ export default function Logo() {
                   ease: "easeInOut",
                 }}
               />
-
-              <motion.div
-                className="relative p-1 "
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                <FaConnectdevelop
-                  className="w-6 h-6 text-foreground "
-                  strokeWidth={2}
-                />
-              </motion.div>
             </div>
           </motion.div>
 

@@ -42,7 +42,7 @@ const ImageGallery = () => {
 
         <div className="w-full h-full flex flex-col mt-20 overflow-hidden ">
           <div className="flex flex-col ml-5 md:ml-10">
-            <div className="flex space-x-3 md:space-x-3 xl:space-x-6 mt-10">
+            <div className="flex space-x-3 md:space-x-3 xl:space-x-6 mt-10 overf">
               {Projects.map((item, index) => {
                 const isActive = activeIndex === index;
 
@@ -52,7 +52,7 @@ const ImageGallery = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setActiveIndex(index)}
-                    className={`cursor-pointer transition-all duration-500 ${isActive
+                    className={`cursor-pointer transition-all duration-500 overflow-hidden ${isActive
                       ? "scale-125 opacity-100 z-10 lg:order-1"
                       : "scale-90  z-0 hover:opacity-100 lg:order-2"
                       }`}
@@ -62,7 +62,7 @@ const ImageGallery = () => {
                       alt={`Avatar ${index + 1}`}
                       width={150}
                       height={150}
-                      className={`rounded-full object-cover transition-all duration-500 ${isActive ? "shadow-2xl" : "grayscale hover:grayscale-0"
+                      className={`rounded-full object-cover transition-all  duration-500 ${isActive ? "shadow-2xl" : "grayscale hover:grayscale-0"
                         }`}
                     />
                   </motion.div>

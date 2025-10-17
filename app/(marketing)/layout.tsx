@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import Line from "@/components/Layout/line";
 import Header from "@/components/Layout/header";
-import Footer from "@/components/block/footer-section";
 import ContactSection from "@/components/block/contact-section";
 import { usePathname } from "next/navigation";
-
+import Footer from "@/components/Layout/footer";
 interface LayoutProps {
   children: ReactNode;
 }
