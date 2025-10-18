@@ -4,7 +4,7 @@ export const footerSections = [
     links: [
       { href: "/about-us", label: "About Us" },
       { href: "/our-work", label: "Our work" },
-      { href: "/careers", label: "Careers" },
+      { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
     ],
   },
@@ -18,13 +18,11 @@ export const socialLinks = [
 
 export const addressSections = [
   {
-    title: "London",
+    title: "Kabul",
     lines: [
-      { text: "hello@satalia.com", href: "mailto:hello@satalia.com" },
-      { text: "Sea Containers" },
-      { text: "18 Upper Ground" },
-      { text: "London SE1 9GL" },
-      { text: "United Kingdom" },
+      { text: "esteraxcompany@gmail.com", href: "mailto:esteraxcompany@gmail.com" },
+      { text: "District 13 " },
+      { text: "Shahrak Haji Nabi" },
     ],
   },
   
@@ -33,8 +31,8 @@ export const contacts =[
   {
     title: "Contact",
     lines: [
-      { text: "enquiries@wpp.com", href: "mailto:enquiries@wpp.com" },
-      { text: "+44 (0)20 7282 4600", href: "tel:+442072824600" },
+      { text: "esteraxcompany@gmail.com", href: "mailto:esteraxcompany@gmail.com" },
+      { text: "+9378 599 8734", href: "tel:+9378 599 8734" },
     ],
   },
 ]

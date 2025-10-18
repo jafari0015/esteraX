@@ -113,7 +113,7 @@ const Footer = () => {
                 </ul>
               </address>
             ))}</div>
-
+            <br className="md:hidden" />
             <div>
               {contacts.map((contact) => (
                 <address key={contact.title} className="not-italic">
@@ -138,7 +138,7 @@ const Footer = () => {
         </div>
         <div className="col-span-2 w-full  border-t border-foreground my-14"></div>
 
-        <div className="flex flex-col lg:flex-row justify-between mb-10 text-base md:text-lg space-y-2 mt-20 lg:mt-0">
+        <div className="flex flex-col lg:flex-row justify-between mb-40 md:mb-10 text-base md:text-lg space-y-2 mt-20 lg:mt-0">
           <p>
             <AnimatedLink href="/privacy">Privacy policy</AnimatedLink> |{" "}
             <AnimatedLink href="/cookies">Cookie policy</AnimatedLink>

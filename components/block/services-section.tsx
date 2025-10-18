@@ -31,8 +31,8 @@ const HorizontalAccordion = () => {
         trigger: containerRef.current,
         start: "top top",
         end: `+=${totalScroll}`,
-        pin: true,
-        pinSpacing: true,
+        pin: !isSmallScreen, // Only pin on medium screens and larger
+        pinSpacing: !isSmallScreen, // Only add pin spacing on medium screens and larger
         scrub: false,
         onEnter: () => setIsInView(true),
         onLeave: () => setIsInView(false),
@@ -45,7 +45,7 @@ const HorizontalAccordion = () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
       ctx && ctx.revert && ctx.revert();
     };
-  }, []);
+  }, [isSmallScreen]); // Add isSmallScreen as dependency
 
 
 
@@ -72,7 +72,7 @@ const HorizontalAccordion = () => {
   };
 
   useEffect(() => {
-    const allowPageScroll = !isInView;
+    const allowPageScroll = !isInView || isSmallScreen; // Allow page scroll on small screens
 
     const onWheel = (e: WheelEvent) => {
       if (allowPageScroll) return;
@@ -167,10 +167,10 @@ const HorizontalAccordion = () => {
       window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [isInView, activeIndex]);
+  }, [isInView, activeIndex, isSmallScreen]);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !isSmallScreen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -179,7 +179,7 @@ const HorizontalAccordion = () => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isInView]);
+  }, [isInView, isSmallScreen]);
 
   const textVariants: Variants = {
     hidden: { opacity: 0, height: 0 },

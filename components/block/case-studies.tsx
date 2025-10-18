@@ -14,7 +14,6 @@ const ImageGallery = () => {
 
   const currentItem = Projects[activeIndex % Projects.length];
 
-  // Detect screen size for responsive layout
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth < 768);
     checkScreen();
@@ -22,7 +21,6 @@ const ImageGallery = () => {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // Infinite loop fix: reset instantly when we scroll past the end
   useEffect(() => {
     if (activeIndex >= Projects.length) {
       const timer = setTimeout(() => {
@@ -41,7 +39,6 @@ const ImageGallery = () => {
       <div className="flex flex-col md:flex-row lg:gap-2 2xl:gap-30 bg-white md:pl-18 lg:pl-25 h-full">
         <Line direction={"vertical"} color="black" thickness={1} />
 
-        {/* ------------------ IMAGE SECTION ------------------ */}
         <div className="w-full xl:min-h-screen relative overflow-hidden flex justify-center items-center">
           <AnimatePresence mode="sync">
             <motion.div
@@ -63,13 +60,11 @@ const ImageGallery = () => {
           </AnimatePresence>
         </div>
 
-        {/* ------------------ AVATAR + TEXT SECTION ------------------ */}
         <div className="w-full h-full flex flex-col mt-20 overflow-hidden">
           <div className="flex flex-col ml-0 md:ml-10">
-            {/* Avatar Carousel */}
             <div className="relative w-full mt-10">
               <div
-                className={`relative w-full overflow-hidden ${isMobile ? "w-full" : "max-w-xl"
+                className={`relative w-full overflow-hidden ${isMobile ? "w-full" : "max-w-[40rem]"
                   }`}
               >
                 <motion.div
@@ -111,7 +106,6 @@ const ImageGallery = () => {
               </div>
             </div>
 
-            {/* Text / Description Section */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -146,7 +140,6 @@ const ImageGallery = () => {
               </motion.div>
             </AnimatePresence>
 
-            {/* More Case Studies Button */}
             <div className="mt-10 text-sm lg:text-lg mb-10 ml-5 lg:ml-5">
               <LearnMore2
                 bgColor="black"
@@ -164,7 +157,6 @@ const ImageGallery = () => {
         </div>
       </div>
 
-      {/* Bottom Divider */}
       <Line
         direction="horizontal"
         thickness={1}
