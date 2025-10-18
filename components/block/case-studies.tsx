@@ -1,15 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Line from "../Layout/line";
 import LearnMore2 from "../ui/learn-more-2";
 import DrawOutlineButton from "../ui/draw-outline-button";
 import Projects from "../../Data/projects";
+
 const ImageGallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const currentItem = Projects[activeIndex];
+  const [isMobile, setIsMobile] = useState(false);
+
+  const currentItem = Projects[activeIndex % Projects.length];
+
+  // Detect screen size for responsive layout
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // Infinite loop fix: reset instantly when we scroll past the end
+  useEffect(() => {
+    if (activeIndex >= Projects.length) {
+      const timer = setTimeout(() => {
+        setActiveIndex((prev) => prev % Projects.length);
+      }, 600); // must match transition duration
+      return () => clearTimeout(timer);
+    }
+  }, [activeIndex]);
 
   return (
     <>
@@ -19,6 +40,8 @@ const ImageGallery = () => {
 
       <div className="flex flex-col md:flex-row lg:gap-2 2xl:gap-30 bg-white md:pl-18 lg:pl-25 h-full">
         <Line direction={"vertical"} color="black" thickness={1} />
+
+        {/* ------------------ IMAGE SECTION ------------------ */}
         <div className="w-full xl:min-h-screen relative overflow-hidden flex justify-center items-center">
           <AnimatePresence mode="sync">
             <motion.div
@@ -40,36 +63,55 @@ const ImageGallery = () => {
           </AnimatePresence>
         </div>
 
-        <div className="w-full h-full flex flex-col mt-20 overflow-hidden ">
-          <div className="flex flex-col ml-5 md:ml-10">
-            <div className="flex space-x-3 md:space-x-3 xl:space-x-6 mt-10 overf">
-              {Projects.map((item, index) => {
-                const isActive = activeIndex === index;
+        {/* ------------------ AVATAR + TEXT SECTION ------------------ */}
+        <div className="w-full h-full flex flex-col mt-20 overflow-hidden">
+          <div className="flex flex-col ml-0 md:ml-10">
+            {/* Avatar Carousel */}
+            <div className="relative w-full mt-10">
+              <div
+                className={`relative w-full overflow-hidden ${isMobile ? "w-full" : "max-w-xl"
+                  }`}
+              >
+                <motion.div
+                  className="flex space-x-6"
+                  animate={{
+                    x: isMobile
+                      ? `calc(50% - ${(activeIndex + Projects.length) * 160 + 80}px)`
+                      : `-${activeIndex * 160}px`, // desktop: active at start
+                  }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                  {[...Projects, ...Projects, ...Projects].map((item, index) => {
+                    const realIndex = index % Projects.length;
+                    const isActive = activeIndex === realIndex;
 
-                return (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setActiveIndex(index)}
-                    className={`cursor-pointer transition-all duration-500 overflow-hidden ${isActive
-                      ? "scale-125 opacity-100 z-10 lg:order-1"
-                      : "scale-90  z-0 hover:opacity-100 lg:order-2"
-                      }`}
-                  >
-                    <Image
-                      src={item.avatar}
-                      alt={`Avatar ${index + 1}`}
-                      width={150}
-                      height={150}
-                      className={`rounded-full object-cover transition-all  duration-500 ${isActive ? "shadow-2xl" : "grayscale hover:grayscale-0"
-                        }`}
-                    />
-                  </motion.div>
-                );
-              })}
+                    return (
+                      <motion.div
+                        key={index}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => setActiveIndex(realIndex)}
+                        className={`cursor-pointer transition-all duration-500 overflow-hidden flex pl-1 items-center flex-shrink-0`}
+                      >
+                        <div className={` rounded-full overflow-hidden transition-all duration-300 ${isActive ? "w-40 h-40" : "w-32 h-32"}
+                          }`}>
+                          <Image
+                            src={item.avatar}
+                            alt={`Avatar ${realIndex + 1}`}
+                            width={64}
+                            height={64}
+                            className={`w-full h-full object-cover transition-all duration-300 ${isActive ? 'grayscale-0' : 'grayscale'
+                              }`}
+                          />
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </motion.div>
+              </div>
             </div>
 
+            {/* Text / Description Section */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -77,7 +119,7 @@ const ImageGallery = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: "-20vw" }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="text-left mt-10"
+                className="text-left mt-10 px-5"
               >
                 <h4 className="text-xl mb-4">{currentItem.subTitle}</h4>
                 <h1 className="text-3xl xl:text-5xl font-medium mb-2">
@@ -104,7 +146,8 @@ const ImageGallery = () => {
               </motion.div>
             </AnimatePresence>
 
-            <div className="mt-10 text-sm lg:text-lg mb-10 lg:ml-5">
+            {/* More Case Studies Button */}
+            <div className="mt-10 text-sm lg:text-lg mb-10 ml-5 lg:ml-5">
               <LearnMore2
                 bgColor="black"
                 textColor="white"
@@ -121,6 +164,7 @@ const ImageGallery = () => {
         </div>
       </div>
 
+      {/* Bottom Divider */}
       <Line
         direction="horizontal"
         thickness={1}

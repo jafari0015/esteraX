@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import WorkComponents from "@/components/ui/ou-work";
 import GridWorkSection, {
   ResourceItem,
@@ -5,6 +6,46 @@ import GridWorkSection, {
 import React from "react";
 import Image from "next/image";
 import resourcesData from "@/Data/resources";
+
+export const metadata: Metadata = {
+  title: "Our Work - EsteraX | AI Solutions & Case Studies",
+  description: "Discover how EsteraX has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
+  keywords: [
+    "EsteraX Case Studies",
+    "AI Solutions Portfolio",
+    "Delivery Optimization",
+    "Route Optimization",
+    "AI ROI",
+    "DFS Case Study",
+    "Woolworths Australia",
+    "Last Mile Delivery",
+    "AI Efficiency",
+    "Business Transformation",
+    "AI Success Stories",
+    "Enterprise AI Solutions"
+  ],
+  openGraph: {
+    title: "Our Work - EsteraX | AI Solutions & Case Studies",
+    description: "Discover how EsteraX has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
+    url: "https://www.esteraX.com/our-work",
+    siteName: "EsteraX",
+    images: [
+      {
+        url: "/bg-our-work.svg",
+        width: 1200,
+        height: 630,
+        alt: "EsteraX Our Work - AI Solutions Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Work - EsteraX | AI Solutions & Case Studies",
+    description: "Discover how EsteraX has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
+    creator: "@EsteraX",
+    images: ["/bg-our-work.svg"],
+  },
+};
 const OurWork = () => {
   const resources: ResourceItem[] = resourcesData;
   return (

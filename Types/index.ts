@@ -66,3 +66,90 @@ interface AboutSectionProps {
   textClass?: string;
   bgColor?: string;
 }
+// Type definitions for blog data
+interface BlogImage {
+  asset?: {
+    _id?: string;
+    url?: string;
+  };
+  alt?: string;
+  caption?: string;
+}
+
+interface BlogCategory {
+  title: string;
+  _id: string;
+}
+
+interface BlogSlug {
+  current: string;
+}
+
+interface Blog {
+  _id: string;
+  title: string;
+  slug: BlogSlug;
+  excerpt?: string;
+  mainImage?: BlogImage;
+  publishedAt: string;
+  categories?: BlogCategory[];
+  readingTime?: number;
+}
+
+// --- Type Definitions ---
+interface ImageValue {
+  asset?: {
+    url?: string;
+  };
+  alt?: string;
+  caption?: string;
+}
+
+interface GalleryImageValue {
+  asset?: {
+    url?: string;
+  };
+  alt?: string;
+  caption?: string;
+}
+
+interface GalleryValue {
+  images?: GalleryImageValue[];
+}
+
+interface VideoValue {
+  url?: string;
+  caption?: string;
+}
+
+interface CodeValue {
+  code?: string;
+}
+
+
+interface BlockProps {
+  children?: React.ReactNode;
+}
+
+interface LinkValue {
+  href?: string;
+}
+
+interface LinkProps {
+  children?: React.ReactNode;
+  value?: LinkValue;
+}
+
+interface Category {
+  _id: string;
+  title: string;
+}
+
+interface Author {
+  name: string;
+  image?: string;
+  bio?: string;
+  slug: string;
+}
+
+

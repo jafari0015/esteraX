@@ -8,7 +8,7 @@ const afacad = Afacad({
 });
 
 export const metadata: Metadata = {
-  title: "EsteraX",
+  title: "EsteraX | Enterprise AI Since 2008",
   description:
     "EsteraX is a creative software company turning ideas into powerful digital experiences.",
   keywords: ["EsteraX", "Software Company", "Digital Experiences", "Creative Solutions"],
@@ -16,8 +16,6 @@ export const metadata: Metadata = {
   creator: "EsteraX",
   publisher: "EsteraX",
   metadataBase: new URL("https://www.esteraX.com"),
-  themeColor: "#000000", // dark theme color
-  colorScheme: "dark",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",

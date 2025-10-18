@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion, easeInOut } from "framer-motion";
-import HeaderLoader from "../ui/HeaderLoader";
 import NavSection from "../ui/NavSection";
 import VerticalLine from "../ui/VerticalLine";
 import AnimatedHamburgerButton from "../ui/menu-button";
@@ -96,10 +95,6 @@ const Header: React.FC = () => {
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <div className="flex justify-between items-center md:py-[5px] lg:py-[16px] md:px-5 px-2  relative z-50">
-        <HeaderLoader
-          duration={2}
-          className="hidden md:flex text-foreground -ml-1 text-2xl"
-        />
 
         <div className="lg:ml-32 md:ml-16">
           <Link href="/">

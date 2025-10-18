@@ -192,7 +192,7 @@ export default function ContactPage() {
                 <p className="text-foreground/60 text-xs md:text-base">
                   Please read our{" "}
                   <a
-                    href="#"
+                    href="/privacy"
                     className="text-foreground underline hover:text-foreground transition-colors"
                   >
                     Privacy Policy
@@ -220,11 +220,11 @@ export default function ContactPage() {
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogOverlay className="fixed inset-0 bg-black/30" />
         <DialogContent className={`${dialogBg} fixed top-1/2 left-1/2 z-50 text-foreground -translate-x-1/2 -translate-y-1/2 p-6 rounded-lg shadow-lg`}>
-          <DialogHeader className="flex items-center gap-4">
+          <DialogHeader className="flex items-center gap-4 text-xl">
             {dialogIcon}
             <DialogTitle>Message Status</DialogTitle>
           </DialogHeader>
-          <DialogDescription className="mt-2">{dialogMessage}</DialogDescription>
+          <DialogDescription className="mt-2 text-lg">{dialogMessage}</DialogDescription>
           <div className="mt-4 flex justify-end">
             <DialogClose className="bg-foreground text-primary cursor-pointer px-4 py-2 rounded">
               Close

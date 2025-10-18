@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Line from "@/components/Layout/line";
 import LearnMore2 from "@/components/ui/learn-more-2";
 import Image from "next/image";
@@ -8,6 +9,46 @@ import {
   LuGraduationCap,
   LuLayers,
 } from "react-icons/lu";
+
+export const metadata: Metadata = {
+  title: "About Us - EsteraX | Enterprise AI Since 2008",
+  description: "Learn about EsteraX's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
+  keywords: [
+    "About EsteraX",
+    "Enterprise AI",
+    "AI Company History",
+    "Dr. Daniel Hulme",
+    "AI Experts",
+    "Machine Learning Team",
+    "Data Science Experts",
+    "AI Safety",
+    "AI Ethics",
+    "AI Governance",
+    "UCL AI",
+    "WPP AI"
+  ],
+  openGraph: {
+    title: "About Us - EsteraX | Enterprise AI Since 2008",
+    description: "Learn about EsteraX's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
+    url: "https://www.esteraX.com/about-us",
+    siteName: "EsteraX",
+    images: [
+      {
+        url: "/about-us.webp",
+        width: 1200,
+        height: 630,
+        alt: "About EsteraX - Enterprise AI Company",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us - EsteraX | Enterprise AI Since 2008",
+    description: "Learn about EsteraX's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
+    creator: "@EsteraX",
+    images: ["/about-us.webp"],
+  },
+};
 
 const AboutUs = () => {
   return (

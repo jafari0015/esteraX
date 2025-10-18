@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { motion, secondsToMilliseconds, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   footerSections,
   socialLinks,
   addressSections,
   contacts,
 } from "@/Data/footer-data";
-import { useRef } from "react";
 import Line from "../Layout/line";
 const AnimatedLink = ({
   href,
@@ -46,20 +45,13 @@ const AnimatedA = ({
 
 
 const Footer = () => {
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start 0.8", "start 0.2"]
-  })
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
   return (
-    <section ref={container}>
+    <section >
       <div className="hidden xl:flex lg:ml-25">
         <Line direction="vertical" thickness={1} color="white" zIndex={50} />
       </div>
       <motion.footer
-        style={{ y }}
         className="relative z-0 overflow-hidden pt-8 text-foreground md:pt-10 lg:pt-32 border-t px-6 -mb-24 md:-mb-14 lg:-mb-6
          md:pl-24 lg:pl-28 xl:pl-48 bg-gradient-to-b from-primary via-primary to-purple-950 ">
         <div className="relative z-50 w-full">

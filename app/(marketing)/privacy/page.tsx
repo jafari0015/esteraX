@@ -1,12 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { ScrollArea } from "@/components/ui/scroll-area"
+
+
 
 export default function PrivacyPolicyPage() {
     const [activeSection, setActiveSection] = useState("types-of-information")
 
-    const sections = [
+    const sections = useMemo(() => [
         { id: "types-of-information", label: "Types of information we collect online" },
         { id: "information-automatically", label: "Information that may be collected automatically" },
         { id: "how-we-use", label: "How we use your information" },
@@ -15,7 +17,7 @@ export default function PrivacyPolicyPage() {
         { id: "privacy-choices", label: "Your privacy choices" },
         { id: "data-security", label: "Data security" },
         { id: "third-party", label: "Third party sites and social media plug-ins" },
-    ]
+    ], [])
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
@@ -51,7 +53,7 @@ export default function PrivacyPolicyPage() {
 
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+    }, [sections])
 
     return (
         <div className="min-h-screen bg-primary pt-18 sm:pt-20 xl:pt-26 md:pl-18 xl:pl-26">
@@ -109,7 +111,7 @@ export default function PrivacyPolicyPage() {
                                     automatically when you use the *** Site.
                                 </p>
                                 <p className="leading-relaxed">
-                                    For purposes of this Privacy Policy, "Personal Data" means information that identifies you or that
+                                    For purposes of this Privacy Policy, &quot;Personal Data&quot; means information that identifies you or that
                                     could reasonably be used to identify you. Examples of Personal Data include name, address, telephone
                                     number, and email address.
                                 </p>
@@ -191,7 +193,7 @@ export default function PrivacyPolicyPage() {
                                     pages, operating system, date/time stamp, and clickstream data.
                                 </p>
                                 <p className="leading-relaxed">
-                                    We use this information to analyze trends, administer the site, track users' movements around the
+                                    We use this information to analyze trends, administer the site, track users&apos; movements around the
                                     site, and gather demographic information about our user base as a whole. We may also use this
                                     information to improve our Sites and services, personalize your experience, and deliver content that
                                     is relevant to your interests.
@@ -290,7 +292,7 @@ export default function PrivacyPolicyPage() {
                                 </p>
                                 <p className="leading-relaxed">
                                     If you are a parent or guardian and believe that your child has provided us with Personal Data, please
-                                    contact us using the information provided in the "Contact details" section below.
+                                    contact us using the information provided in the &quot;Contact details&quot; section below.
                                 </p>
                             </div>
                         </section>
@@ -324,7 +326,7 @@ export default function PrivacyPolicyPage() {
                                     <li className="flex items-start">
                                         <span className="mr-2 mt-1.5 size-1.5 shrink-0 rounded-full bg-foregtext-foreground" />
                                         <span>
-                                            <strong>Do Not Track:</strong> Some browsers have a "Do Not Track" feature that lets you tell
+                                            <strong>Do Not Track:</strong> Some browsers have a &quot;Do Not Track&quot; feature that lets you tell
                                             websites that you do not want to have your online activities tracked
                                         </span>
                                     </li>
@@ -376,7 +378,7 @@ export default function PrivacyPolicyPage() {
                                     policies of any third-party sites you visit.
                                 </p>
                                 <p className="leading-relaxed">
-                                    Our website may also include social media features, such as the Facebook "Like" button and widgets.
+                                    Our website may also include social media features, such as the Facebook &quot;Like&quot; button and widgets.
                                     These features may collect your IP address, which page you are visiting on our site, and may set a
                                     cookie to enable the feature to function properly. Social media features and widgets are either hosted
                                     by a third party or hosted directly on our website. Your interactions with these features are governed

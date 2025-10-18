@@ -2,7 +2,6 @@
 import { motion, useInView, Variants } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import LearnMore2 from "../ui/learn-more-2";
-import Image from "next/image";
 const AboutSection: React.FC<AboutSectionProps> = ({
   id,
   title = "",
@@ -23,12 +22,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       if (!ref.current) return;
-      const rect = ref.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const progress = Math.min(
-        Math.max((windowHeight - rect.top) / (rect.height + windowHeight), 0),
-        1
-      );
     };
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -74,7 +67,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             />
           </div>
 
-          <div className="text-start md:max-w-[280px] lg:max-w-sm xl:max-w-xl xl:mr-20 2xl:mr-40 px-6 mt-10 md:px-0">
+          <div className="text-start md:max-w-[280px] lg:max-w-sm xl:max-w-xl xl:mr-28 2xl:mr-60 px-6 mt-10 md:px-0">
             <h2 className="text-3xl lg:text-4xl xl:text-6xl">{heading}</h2>
 
             {paragraphs.map((text, index) => (

@@ -1,12 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { IoMenuSharp, IoClose } from "react-icons/io5";
+import { useState, useEffect, useMemo } from "react"
+
 export default function CookiePolicyPage() {
     const [activeSection, setActiveSection] = useState("what-are-cookies")
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-    const sections = [
+    const sections = useMemo(() => [
         { id: "what-are-cookies", label: "What are cookies" },
         { id: "types-of-cookies", label: "Types of cookies we use" },
         { id: "essential-cookies", label: "Essential cookies" },
@@ -15,8 +15,7 @@ export default function CookiePolicyPage() {
         { id: "how-we-use", label: "How we use cookies" },
         { id: "third-party", label: "Third-party cookies" },
         { id: "managing-cookies", label: "Managing cookies" },
-        { id: "contact", label: "Contact details" },
-    ]
+    ], [])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,7 +34,7 @@ export default function CookiePolicyPage() {
 
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
+    }, [sections])
 
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id)
@@ -54,7 +53,7 @@ export default function CookiePolicyPage() {
         <div className="min-h-screen bg-primary pt-18 sm:pt-20 xl:pt-26 md:pl-18 xl:pl-26">
             {/* Header with curved wave */}
             <header className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-foreground text-foreground overflow-hidden">
-                <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 foregroundter">
+                <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
                     <h1 className="text-5xl md:text-6xl font-bold mb-4">Cookie Policy</h1>
                     <p className="text-indigo-100 text-lg">Effective May 1, 2018</p>
                 </div>
@@ -211,7 +210,7 @@ export default function CookiePolicyPage() {
                                         <h3 className="text-xl font-semibold text-indigo-900 mb-2">Preferences and Settings</h3>
                                         <p className="text-gray-700">
                                             Cookies help us remember your preferences, such as language selection, display settings, and other
-                                            customization options you've chosen.
+                                            customization options you&apos;ve chosen.
                                         </p>
                                     </div>
                                     <div className="bg-white border border-indigo-100 p-6 rounded-lg shadow-sm">
@@ -284,52 +283,12 @@ export default function CookiePolicyPage() {
                                     </ul>
                                 </div>
                                 <p>
-                                    If you use a different browser, please refer to your browser's help documentation for information on
+                                    If you use a different browser, please refer to your browser&apos;s help documentation for information on
                                     how to manage cookies.
                                 </p>
                             </div>
                         </section>
 
-                        {/* Contact */}
-                        <section id="contact" className="mb-16 scroll-mt-24">
-                            <h2 className="text-3xl font-bold text-foreground mb-6">Contact details</h2>
-                            <div className="prose prose-lg text-foreground space-y-4">
-                                <p>If you have any questions about our use of cookies or other technologies, please contact us:</p>
-                                <div className="bg-white border border-indigo-200 p-8 rounded-lg shadow-sm">
-                                    <div className="space-y-4">
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-indigo-900 mb-1">Data Protection Officer</h3>
-                                            <p className="text-gray-700">John Smith, Data Protection Officer</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-indigo-900 mb-1">Email</h3>
-                                            <p className="text-gray-700">privacy@example.com</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-indigo-900 mb-1">Address</h3>
-                                            <p className="text-gray-700">
-                                                123 Privacy Street, Suite 100
-                                                <br />
-                                                San Francisco, CA 94102
-                                                <br />
-                                                United States
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* Footer note */}
-                        <div className="mt-12 pt-8 border-t border-gray-200">
-                            <p className="text-sm text-gray-500">Last updated: October 23, 2023</p>
-                            <p className="text-sm text-gray-500 mt-2">
-                                This document was created with the{" "}
-                                <span className="text-indigo-600 font-medium">Privacy and Cookie Policy Generator</span>. For more
-                                information, visit our{" "}
-                                <span className="text-indigo-600 font-medium cursor-pointer hover:underline">Privacy Policy</span>.
-                            </p>
-                        </div>
                     </main>
                 </div>
             </div>

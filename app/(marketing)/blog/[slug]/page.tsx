@@ -1,20 +1,101 @@
-// app/(...)/BlogDetail.tsx  (or page component file)
+import type { Metadata } from "next";
+import { PortableText, PortableTextBlock } from "@portabletext/react";
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
 import { client } from "@/libs/sanity";
 
-type BlogDetailProps = { params: { slug: string } };
+type BlogDetailProps = {
+  params: { slug: string };
+};
 
-// Portable Text components mapping
+export async function generateMetadata({ params }: BlogDetailProps): Promise<Metadata> {
+  const post = await client.fetch<BlogPost>(
+    `*[_type == "blog" && slug.current == $slug][0]{
+      title,
+      excerpt,
+      mainImage{
+        asset->{url},
+        alt
+      },
+      publishedAt,
+      categories[]->{title}
+    }`,
+    { slug: params.slug }
+  );
+
+  if (!post) {
+    return {
+      title: "Blog Post Not Found - EsteraX",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: `${post.title} - EsteraX Blog`,
+    description: post.excerpt || `Read ${post.title} on the EsteraX blog. Discover insights on AI, technology, and innovation.`,
+    keywords: [
+      post.title,
+      "EsteraX Blog",
+      "AI Blog",
+      "Technology Blog",
+      ...(post.categories?.map(cat => cat.title) || [])
+    ],
+    openGraph: {
+      title: `${post.title} - EsteraX Blog`,
+      description: post.excerpt || `Read ${post.title} on the EsteraX blog. Discover insights on AI, technology, and innovation.`,
+      url: `https://www.esteraX.com/blog/${params.slug}`,
+      siteName: "EsteraX",
+      images: post.mainImage?.asset?.url ? [
+        {
+          url: post.mainImage.asset.url,
+          width: 1200,
+          height: 630,
+          alt: post.mainImage.alt || post.title,
+        },
+      ] : [
+        {
+          url: "/bg-our-work.svg",
+          width: 1200,
+          height: 630,
+          alt: "EsteraX Blog Post",
+        },
+      ],
+      type: "article",
+      publishedTime: post.publishedAt,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} - EsteraX Blog`,
+      description: post.excerpt || `Read ${post.title} on the EsteraX blog. Discover insights on AI, technology, and innovation.`,
+      creator: "@EsteraX",
+      images: post.mainImage?.asset?.url ? [post.mainImage.asset.url] : ["/bg-our-work.svg"],
+    },
+  };
+}
+
+interface CalloutValue {
+  style?: "info" | "success" | "warning" | string;
+  body?: PortableTextBlock[];
+}
+interface BlogPost {
+  title: string;
+  author?: Author;
+  mainImage?: ImageValue;
+  body: PortableTextBlock[];
+  publishedAt?: string;
+  readingTime?: number;
+  categories?: Category[];
+  excerpt?: string;
+}
+// --- PortableText Components ---
 const components = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ value }: { value: ImageValue }) => {
       const src = value?.asset?.url;
       if (!src) return null;
       return (
         <div className="my-6">
           <div className="overflow-hidden rounded-xl mb-2">
-            <img
+            <Image
               src={src}
               alt={value.alt || "Blog image"}
               width={1200}
@@ -30,14 +111,14 @@ const components = {
         </div>
       );
     },
-    gallery: ({ value }: any) => {
+    gallery: ({ value }: { value: GalleryValue }) => {
       if (!Array.isArray(value?.images)) return null;
       return (
         <div className="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {value.images.map((img: any, i: number) => (
+          {value.images.map((img, i) => (
             <div key={i}>
-              <img
-                src={img.asset?.url}
+              <Image
+                src={img.asset?.url || ""}
                 alt={img.alt || `gallery-${i}`}
                 width={600}
                 height={400}
@@ -53,7 +134,7 @@ const components = {
         </div>
       );
     },
-    video: ({ value }: any) => {
+    video: ({ value }: { value: VideoValue }) => {
       if (!value?.url) return null;
       return (
         <div className="my-6">
@@ -73,12 +154,12 @@ const components = {
         </div>
       );
     },
-    code: ({ value }: any) => (
+    code: ({ value }: { value: CodeValue }) => (
       <pre className="bg-gray-900 text-foreground p-4 rounded-lg my-6 overflow-x-auto">
         <code>{value.code}</code>
       </pre>
     ),
-    callout: ({ value }: any) => {
+    callout: ({ value }: { value: CalloutValue }) => {
       const style = value?.style || "default";
       const bg =
         style === "info"
@@ -89,47 +170,45 @@ const components = {
 
       return (
         <div className={`my-6 p-4 rounded-lg ${bg}`}>
-          {/* The body is usually PortableText itself */}
-          <PortableText value={value.body} components={components} />
+          <PortableText value={value.body || []} components={components} />
         </div>
       );
     },
   },
   block: {
-    h1: ({ children }: any) => <h1 className="text-4xl font-bold mb-4">{children}</h1>,
-    h2: ({ children }: any) => <h2 className="text-3xl md:text-5xl font-semibold mb-3">{children}</h2>,
-    h3: ({ children }: any) => <h3 className="text-3xl font-semibold mb-2">{children}</h3>,
-    normal: ({ children }: any) => <p className="mb-4 text-xl leading-relaxed mt-5">{children}</p>,
-    blockquote: ({ children }: any) => (
+    h1: ({ children }: BlockProps) => <h1 className="text-4xl font-bold mb-4">{children}</h1>,
+    h2: ({ children }: BlockProps) => <h2 className="text-3xl md:text-5xl font-semibold mb-3">{children}</h2>,
+    h3: ({ children }: BlockProps) => <h3 className="text-3xl font-semibold mb-2">{children}</h3>,
+    normal: ({ children }: BlockProps) => <p className="mb-4 text-xl leading-relaxed mt-5">{children}</p>,
+    blockquote: ({ children }: BlockProps) => (
       <blockquote className="border-l-4 pl-4 italic my-4">{children}</blockquote>
     ),
   },
   marks: {
-    // Links & emphasis
-    link: ({ children, value }: any) => {
+    link: ({ children, value }: LinkProps) => {
       const href = value?.href || "#";
+      const external = href.startsWith("http");
       return (
         <a
           href={href}
-          target={href && href.startsWith("http") ? "_blank" : undefined}
-          rel={href && href.startsWith("http") ? "noopener noreferrer" : undefined}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
           className="underline"
         >
           {children}
         </a>
       );
     },
-    // Add other marks (code, strong, em) will be default-HTML.
   },
   list: {
-    bullet: ({ children }: any) => <ul className="list-disc pl-6 text-xl mb-4">{children}</ul>,
-    number: ({ children }: any) => <ol className="list-decimal pl-6 mb-4 text-xl">{children}</ol>,
+    bullet: ({ children }: BlockProps) => <ul className="list-disc pl-6 text-xl mb-4">{children}</ul>,
+    number: ({ children }: BlockProps) => <ol className="list-decimal pl-6 mb-4 text-xl">{children}</ol>,
   },
 };
 
+// --- Page Component ---
 export default async function BlogDetail({ params }: BlogDetailProps) {
-  // GROQ: fetch the post and expand author reference to include name, image, bio, slug
-  const post = await client.fetch(
+  const post = await client.fetch<BlogPost>(
     `*[_type == "blog" && slug.current == $slug][0]{
       title,
       "author": author->{name, "image": image.asset->url, bio, "slug": slug.current},
@@ -162,7 +241,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
       <div className="max-w-6xl mx-auto px-6 md:pl-24">
         <header className="mb-10 text-center">
           <div className="flex justify-center gap-2 mb-5">
-            {post.categories?.map((cat: any) => (
+            {post.categories?.map((cat) => (
               <span
                 key={cat._id}
                 className="text-sm tracking-widest border border-white rounded-full py-2 px-2 uppercase text-foreground font-semibold"
@@ -171,11 +250,13 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
               </span>
             ))}
           </div>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">{post.title}</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
+            {post.title}
+          </h1>
           {post.author?.name && (
             <div className="flex items-center justify-center gap-3">
               {post.author.image && (
-                <img
+                <Image
                   src={post.author.image}
                   alt={post.author.name}
                   width={30}
@@ -183,7 +264,9 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
                   className="rounded-full"
                 />
               )}
-              <p className="text-base md:text-lg font-semibold text-foreground/90 tracking-[2px]">written By  {post.author.name}</p>
+              <p className="text-base md:text-lg font-semibold text-foreground/90 tracking-[2px]">
+                Written by {post.author.name}
+              </p>
             </div>
           )}
         </header>
@@ -191,7 +274,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
         {/* Featured Image */}
         {post.mainImage?.asset?.url && (
           <div className="overflow-hidden rounded-2xl mb-12 shadow-lg">
-            <img
+            <Image
               src={post.mainImage.asset.url}
               alt={post.mainImage.alt || post.title}
               width={1200}
@@ -199,7 +282,9 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
               className="rounded-xl w-full object-cover"
             />
             {post.mainImage.caption && (
-              <p className="text-sm text-foreground/80 text-center mt-2">{post.mainImage.caption}</p>
+              <p className="text-sm text-foreground/80 text-center mt-2">
+                {post.mainImage.caption}
+              </p>
             )}
           </div>
         )}

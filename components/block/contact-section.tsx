@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../ui/learn-more-btn";
 import Line from "../Layout/line";
 import { TfiArrowRight } from "react-icons/tfi";
+import Link from "next/link";
 
 const ContactSection = () => {
   return (
@@ -16,9 +17,10 @@ const ContactSection = () => {
             Ask us how AI can benefit your business.
           </h1>
           <div>
-            <Button icon={<TfiArrowRight />} className="mt-14 text-3xl">
-              <span className="text-2xl">Let&apos;s Talk</span>
-            </Button>
+            <Link href="/contact">
+              <Button icon={<TfiArrowRight />} className="mt-14 text-3xl">
+                <span className="text-2xl">Let&apos;s Talk</span>
+              </Button></Link>
           </div>
         </div>
         <div className="flex-1 z-20 flex justify-end ml-22 sm:ml-0 items-center order-1 md:order-2">

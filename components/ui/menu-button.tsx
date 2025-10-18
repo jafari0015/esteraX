@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { MotionConfig, motion } from "framer-motion";
 interface AnimatedHamburgerButtonProps {
   backgroundColor?: string;
