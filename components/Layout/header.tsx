@@ -149,7 +149,7 @@ const Header: React.FC = () => {
             >
               <div className="md:text-center ml-5 md:ml-0  lg:ml-10">
                 <Link href="/" className="text-4xl md:text-4xl xl:text-6xl mt-4 font-bold mb-2">
-                  EsteraX
+                  UstadLink
                 </Link>
                 <p
                   className={`text-xl md:text-xs lg:text-base ${darkStyle ? "text-gray-700" : "text-gray-300"

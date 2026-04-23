@@ -113,7 +113,7 @@ export default function ContactPage() {
                     {...register("firstName")}
                     type="text"
                     placeholder="First name*"
-                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-sm md:text-base"
+                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-base md:text-lg"
                   />
                   {errors.firstName && (
                     <p className="text-red-400 text-xs mt-1">
@@ -126,7 +126,7 @@ export default function ContactPage() {
                     {...register("lastName")}
                     type="text"
                     placeholder="Last name*"
-                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-sm md:text-base"
+                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-base md:text-lg"
                   />
                   {errors.lastName && (
                     <p className="text-red-400 text-xs mt-1">
@@ -142,7 +142,7 @@ export default function ContactPage() {
                     {...register("email")}
                     type="email"
                     placeholder="Email address*"
-                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-sm md:text-base"
+                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-base md:text-lg"
                   />
                   {errors.email && (
                     <p className="text-red-400 text-xs mt-1">
@@ -155,7 +155,7 @@ export default function ContactPage() {
                     {...register("phone")}
                     type="tel"
                     placeholder="Phone number"
-                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-sm md:text-base"
+                    className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none text-base md:text-lg"
                   />
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
                   {...register("message")}
                   placeholder="Your message*"
                   rows={8}
-                  className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none resize-none text-sm md:text-base"
+                  className="w-full bg-transparent text-foreground placeholder:text-foreground/60 outline-none resize-none text-base md:text-lg"
                 />
                 {errors.message && (
                   <p className="text-red-400 text-xs mt-1">

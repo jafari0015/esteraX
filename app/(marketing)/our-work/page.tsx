@@ -8,10 +8,10 @@ import Image from "next/image";
 import resourcesData from "@/Data/resources";
 
 export const metadata: Metadata = {
-  title: "Our Work - EsteraX | AI Solutions & Case Studies",
-  description: "Discover how EsteraX has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
+  title: "Our Work - UstadLink | AI Solutions & Case Studies",
+  description: "Discover how UstadLink has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
   keywords: [
-    "EsteraX Case Studies",
+    "UstadLink Case Studies",
     "AI Solutions Portfolio",
     "Delivery Optimization",
     "Route Optimization",
@@ -25,24 +25,24 @@ export const metadata: Metadata = {
     "Enterprise AI Solutions"
   ],
   openGraph: {
-    title: "Our Work - EsteraX | AI Solutions & Case Studies",
-    description: "Discover how EsteraX has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
-    url: "https://www.esteraX.com/our-work",
-    siteName: "EsteraX",
+    title: "Our Work - UstadLink | AI Solutions & Case Studies",
+    description: "Discover how UstadLink has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
+    url: "https://www.UstadLink.com/our-work",
+    siteName: "UstadLink",
     images: [
       {
         url: "/bg-our-work.svg",
         width: 1200,
         height: 630,
-        alt: "EsteraX Our Work - AI Solutions Portfolio",
+        alt: "UstadLink Our Work - AI Solutions Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Work - EsteraX | AI Solutions & Case Studies",
-    description: "Discover how EsteraX has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
-    creator: "@EsteraX",
+    title: "Our Work - UstadLink | AI Solutions & Case Studies",
+    description: "Discover how UstadLink has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
+    creator: "@UstadLink",
     images: ["/bg-our-work.svg"],
   },
 };

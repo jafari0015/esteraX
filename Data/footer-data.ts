@@ -20,7 +20,7 @@ export const addressSections = [
   {
     title: "Kabul",
     lines: [
-      { text: "esteraxcompany@gmail.com", href: "mailto:esteraxcompany@gmail.com" },
+      { text: "ustadlinkcompany@gmail.com", href: "mailto:ustadlinkcompany@gmail.com" },
       { text: "District 13 " },
       { text: "Shahrak Haji Nabi" },
     ],
@@ -31,7 +31,7 @@ export const contacts =[
   {
     title: "Contact",
     lines: [
-      { text: "esteraxcompany@gmail.com", href: "mailto:esteraxcompany@gmail.com" },
+      { text: "ustadlinkcompany@gmail.com", href: "mailto:ustadlinkcompany@gmail.com" },
       { text: "+9378 599 8734", href: "tel:+9378 599 8734" },
     ],
   },

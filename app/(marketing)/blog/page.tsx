@@ -8,10 +8,10 @@ import React from "react";
 import { TfiTimer } from "react-icons/tfi";
 
 export const metadata: Metadata = {
-  title: "Blog - EsteraX | Latest Insights on AI, Technology & Innovation",
-  description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with EsteraX.",
+  title: "Blog - UstadLink | Latest Insights on AI, Technology & Innovation",
+  description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with UstadLink.",
   keywords: [
-    "EsteraX Blog",
+    "UstadLink Blog",
     "AI Blog",
     "Technology Blog",
     "Web Development",
@@ -24,24 +24,24 @@ export const metadata: Metadata = {
     "Data Science Blog"
   ],
   openGraph: {
-    title: "Blog - EsteraX | Latest Insights on AI, Technology & Innovation",
-    description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with EsteraX.",
-    url: "https://www.esteraX.com/blog",
-    siteName: "EsteraX",
+    title: "Blog - UstadLink | Latest Insights on AI, Technology & Innovation",
+    description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with UstadLink.",
+    url: "https://www.UstadLink.com/blog",
+    siteName: "UstadLink",
     images: [
       {
         url: "/bg-our-work.svg",
         width: 1200,
         height: 630,
-        alt: "EsteraX Blog - Technology Insights",
+        alt: "UstadLink Blog - Technology Insights",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog - EsteraX | Latest Insights on AI, Technology & Innovation",
-    description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with EsteraX.",
-    creator: "@EsteraX",
+    title: "Blog - UstadLink | Latest Insights on AI, Technology & Innovation",
+    description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with UstadLink.",
+    creator: "@UstadLink",
     images: ["/bg-our-work.svg"],
   },
 };
@@ -94,7 +94,7 @@ export default async function BlogList() {
         </div>
         <div className="relative md:max-w-2xl float-right text-foreground text-4xl px-4 pt-20 md:pt-48 lg:pt-70 md:pr-20">
           <p>&quot;If we make decisions in the right way, we can have a world of abundance. A world where people are free to do whatever they want to do.&quot;</p>
-          <h5 className="text-lg mt-5">CEO and Founder of EsteraX</h5>
+          <h5 className="text-lg mt-5">CEO and Founder of UstadLink</h5>
         </div>
 
       </section>

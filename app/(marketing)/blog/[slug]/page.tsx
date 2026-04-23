@@ -24,26 +24,26 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
 
   if (!post) {
     return {
-      title: "Blog Post Not Found - EsteraX",
+      title: "Blog Post Not Found - UstadLink",
       description: "The requested blog post could not be found.",
     };
   }
 
   return {
-    title: `${post.title} - EsteraX Blog`,
-    description: post.excerpt || `Read ${post.title} on the EsteraX blog. Discover insights on AI, technology, and innovation.`,
+    title: `${post.title} - UstadLink Blog`,
+    description: post.excerpt || `Read ${post.title} on the UstadLink blog. Discover insights on AI, technology, and innovation.`,
     keywords: [
       post.title,
-      "EsteraX Blog",
+      "UstadLink Blog",
       "AI Blog",
       "Technology Blog",
       ...(post.categories?.map(cat => cat.title) || [])
     ],
     openGraph: {
-      title: `${post.title} - EsteraX Blog`,
-      description: post.excerpt || `Read ${post.title} on the EsteraX blog. Discover insights on AI, technology, and innovation.`,
-      url: `https://www.esteraX.com/blog/${params.slug}`,
-      siteName: "EsteraX",
+      title: `${post.title} - UstadLink Blog`,
+      description: post.excerpt || `Read ${post.title} on the UstadLink blog. Discover insights on AI, technology, and innovation.`,
+      url: `https://www.UstadLink.com/blog/${params.slug}`,
+      siteName: "UstadLink",
       images: post.mainImage?.asset?.url ? [
         {
           url: post.mainImage.asset.url,
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
           url: "/bg-our-work.svg",
           width: 1200,
           height: 630,
-          alt: "EsteraX Blog Post",
+          alt: "UstadLink Blog Post",
         },
       ],
       type: "article",
@@ -64,9 +64,9 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} - EsteraX Blog`,
-      description: post.excerpt || `Read ${post.title} on the EsteraX blog. Discover insights on AI, technology, and innovation.`,
-      creator: "@EsteraX",
+      title: `${post.title} - UstadLink Blog`,
+      description: post.excerpt || `Read ${post.title} on the UstadLink blog. Discover insights on AI, technology, and innovation.`,
+      creator: "@UstadLink",
       images: post.mainImage?.asset?.url ? [post.mainImage.asset.url] : ["/bg-our-work.svg"],
     },
   };

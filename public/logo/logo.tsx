@@ -50,7 +50,7 @@ export default function Logo() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                E
+                U
               </motion.span>
             </div>
 
@@ -62,7 +62,7 @@ export default function Logo() {
                 letterSpacing: "-0.05em",
               }}
             >
-              stera
+              stadLink
             </span>
 
             <motion.div
@@ -89,7 +89,7 @@ export default function Logo() {
                     letterSpacing: "0.05em",
                   }}
                 >
-                  X
+                  
                 </span>
               </div>
             </motion.div>

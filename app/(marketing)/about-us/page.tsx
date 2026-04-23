@@ -11,10 +11,10 @@ import {
 } from "react-icons/lu";
 
 export const metadata: Metadata = {
-  title: "About Us - EsteraX | Enterprise AI Since 2008",
-  description: "Learn about EsteraX's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
+  title: "About Us - UstadLink | Enterprise AI Since 2008",
+  description: "Learn about UstadLink's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
   keywords: [
-    "About EsteraX",
+    "About UstadLink",
     "Enterprise AI",
     "AI Company History",
     "Dr. Daniel Hulme",
@@ -28,24 +28,24 @@ export const metadata: Metadata = {
     "WPP AI"
   ],
   openGraph: {
-    title: "About Us - EsteraX | Enterprise AI Since 2008",
-    description: "Learn about EsteraX's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
-    url: "https://www.esteraX.com/about-us",
-    siteName: "EsteraX",
+    title: "About Us - UstadLink | Enterprise AI Since 2008",
+    description: "Learn about UstadLink's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
+    url: "https://www.UstadLink.com/about-us",
+    siteName: "UstadLink",
     images: [
       {
         url: "/about-us.webp",
         width: 1200,
         height: 630,
-        alt: "About EsteraX - Enterprise AI Company",
+        alt: "About UstadLink - Enterprise AI Company",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - EsteraX | Enterprise AI Since 2008",
-    description: "Learn about EsteraX's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
-    creator: "@EsteraX",
+    title: "About Us - UstadLink | Enterprise AI Since 2008",
+    description: "Learn about UstadLink's journey in enterprise AI since 2008. We've built AI solutions for The Coca-Cola Company, PwC, and Tesco. Discover our mission to create a future where everyone is free to live beyond themselves.",
+    creator: "@UstadLink",
     images: ["/about-us.webp"],
   },
 };

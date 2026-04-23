@@ -77,7 +77,7 @@ const HeroSection = () => {
           variants={item}
         >
           <h1>
-            EsteraX brings innovation to <br />
+          UstadLink brings innovation to <br />
             life through code and creativity.
           </h1>
         </motion.div>
