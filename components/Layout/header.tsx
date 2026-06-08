@@ -8,9 +8,9 @@ import Link from "next/link";
 import Logo from "@/public/logo/logo";
 const services = [
   { title: "Web Development", url: "/web-development" },
-  { title: "App Development", url: "/app-development" },
-  { title: "Hosting & Solutions", url: "/hosting-solutions" },
-  { title: "Other Development Services", url: "/other-services" },
+  { title: "Mobile Development", url: "/app-development" },
+  { title: "Software Development", url: "/other-services" },
+  { title: "Hosting & Cloud Solutions", url: "/hosting-solutions" },
 ];
 
 const pages = [
@@ -149,14 +149,14 @@ const Header: React.FC = () => {
             >
               <div className="md:text-center ml-5 md:ml-0  lg:ml-10">
                 <Link href="/" className="text-4xl md:text-4xl xl:text-6xl mt-4 font-bold mb-2">
-                  UstadLink
+                  Diba Tech
                 </Link>
                 <p
                   className={`text-xl md:text-xs lg:text-base ${darkStyle ? "text-gray-700" : "text-gray-300"
                     }`}
                 >
-                  We build innovative digital solutions, <br /> from web apps to
-                  AI-driven platforms.
+                  We build web platforms, mobile apps, custom software, <br />
+                  hosting solutions, and the digital systems behind them.
                 </p>
               </div>
 

@@ -1,6 +1,6 @@
 interface LineProps {
   direction?: "horizontal" | "vertical";
-  length?: string | number | any;
+  length?: string | number;
   thickness?: string | number;
   color?: string;
   top?: string | number;
@@ -63,6 +63,7 @@ interface AboutSectionProps {
   heading?: string;
   paragraphs?: string[];
   buttonText?: string;
+  buttonHref?: string;
   textClass?: string;
   bgColor?: string;
 }
@@ -151,5 +152,4 @@ interface Author {
   bio?: string;
   slug: string;
 }
-
 

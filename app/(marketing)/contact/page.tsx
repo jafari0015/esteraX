@@ -97,11 +97,11 @@ export default function ContactPage() {
               CONTACT
             </p>
             <h1 className="text-foreground text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-light leading-tight text-balance">
-              Contact us about an opportunity, partnership or media enquiry
+              Tell us about your website, mobile app, software, or support needs
             </h1>
             <p className="text-foreground/80 text-base md:text-xl leading-6 max-w-xl">
-              Please provide a brief description of your business inquiry and we
-              will get back to you as soon as we can.
+              Share a short description of your project and the Diba Tech team
+              will get back to you with the next practical step.
             </p>
           </div>
 
@@ -186,7 +186,7 @@ export default function ContactPage() {
                     htmlFor="updates"
                     className="text-foreground text-base cursor-pointer"
                   >
-                    I would like to receive updates from Satalia
+                    I would like to receive updates from Diba Tech
                   </label>
                 </div>
                 <p className="text-foreground/60 text-xs md:text-base">

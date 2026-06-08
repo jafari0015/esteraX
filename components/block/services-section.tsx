@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence, Variants, Variant } from "framer-motion";
+import { useCallback, useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
 import LearnMore2 from "../ui/learn-more-2";
 import Line from "../Layout/line";
@@ -43,7 +43,7 @@ const HorizontalAccordion = () => {
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
-      ctx && ctx.revert && ctx.revert();
+      ctx?.revert?.();
     };
   }, [isSmallScreen]); // Add isSmallScreen as dependency
 
@@ -58,7 +58,7 @@ const HorizontalAccordion = () => {
     return () => mq.removeEventListener("change", handleChange);
   }, []);
 
-  const trySetIndex = (nextIndex: number) => {
+  const trySetIndex = useCallback((nextIndex: number) => {
     if (nextIndex === activeIndex) return;
     if (nextIndex < 0 || nextIndex >= services.length) return;
     if (isAnimatingRef.current) return;
@@ -69,7 +69,7 @@ const HorizontalAccordion = () => {
     window.setTimeout(() => {
       isAnimatingRef.current = false;
     }, 900);
-  };
+  }, [activeIndex]);
 
   useEffect(() => {
     const allowPageScroll = !isInView || isSmallScreen; // Allow page scroll on small screens
@@ -167,7 +167,7 @@ const HorizontalAccordion = () => {
       window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [isInView, activeIndex, isSmallScreen]);
+  }, [isInView, activeIndex, isSmallScreen, trySetIndex]);
 
   useEffect(() => {
     if (isInView && !isSmallScreen) {
@@ -244,7 +244,7 @@ const HorizontalAccordion = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="relative w-full h-[40vh] md:h-[30vh] lg:h[60vh] xl:h-[70vh] max-w-xs md:max-w-sm lg:mt-20 xl:mt-0 lg:max-w-xl xl:max-w-3xl"
+              className="relative w-full h-[40vh] md:h-[30vh] lg:h-[60vh] xl:h-[70vh] max-w-xs md:max-w-sm lg:mt-20 xl:mt-0 lg:max-w-xl xl:max-w-3xl"
             >
               <Image
                 src={services[activeIndex].image}

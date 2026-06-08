@@ -17,14 +17,15 @@ const Home = () => {
       <HeroSection />
       <AboutUs
         title="ABOUT US"
-        imageSrc="/about-us.webp"
-        heading="Unique AI capability"
+        imageSrc="/ceo.png"
+        heading="Built by Mahdi Jafari — full stack engineer for web, mobile, and software"
         paragraphs={[
-          "We combine expertise in data science and optimisation in a way very few AI companies can.",
-          "You’ll always have direct access to highly skilled technical specialists and subject matter experts – from initial scoping to ongoing support.",
-          "And our flexible AI systems not only integrate with your existing setup, but learn, optimise and improve over time – driving increasingly valuable insights that give you a competitive advantage.",
+          "Mahdi Jafari is a full stack engineer with 3+ years of experience building web and mobile products with React, Next.js, TypeScript, Node.js, Express, and Flutter.",
+          "Through Diba Tech, you work directly with the engineer behind the product — from UI and UX to APIs, databases, launch, and long-term support.",
+          "Explore more work and background at mahdi.codes, or download the resume to see projects, skills, and experience in detail.",
         ]}
         buttonText="Learn More"
+        buttonHref="/about-us"
       />
       <HorizontalAccordion />
       <div id="project-section" ref={projectRef}>

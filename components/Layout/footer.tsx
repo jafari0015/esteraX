@@ -145,11 +145,10 @@ const Footer = () => {
           </p>
           <div>
             <p className="text-foreground/80 text-base">
-              © 2008 - 2025 NPCcomplete Ltd (Trading as Satalia). All Rights
-              Reserved.
+              Copyright 2026 Diba Tech. All Rights Reserved.
             </p>
             <p className="text-foreground/80 text-base">
-              Registered in England and Wales · Company No: 06759250
+              Web, mobile, software, hosting, and digital development agency.
             </p>
           </div>
         </div>

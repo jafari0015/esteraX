@@ -1,6 +1,7 @@
 "use client";
 import { motion, useInView, Variants } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 import LearnMore2 from "../ui/learn-more-2";
 const AboutSection: React.FC<AboutSectionProps> = ({
   id,
@@ -9,6 +10,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   heading = "",
   paragraphs = [],
   buttonText = "",
+  buttonHref,
 }) => {
   const ref = useRef<HTMLElement | null>(null);
   const inView = useInView(ref, { amount: 0.1 });
@@ -76,9 +78,15 @@ const AboutSection: React.FC<AboutSectionProps> = ({
               </p>
             ))}
 
-            <LearnMore2 className="mt-14 mb-10 md:mb-0 xl:mt-36">
-              {buttonText}
-            </LearnMore2>
+            {buttonHref ? (
+              <Link href={buttonHref} className="inline-block mt-14 mb-10 md:mb-0 xl:mt-36">
+                <LearnMore2>{buttonText}</LearnMore2>
+              </Link>
+            ) : (
+              <LearnMore2 className="mt-14 mb-10 md:mb-0 xl:mt-36">
+                {buttonText}
+              </LearnMore2>
+            )}
           </div>
         </div>
       </section>

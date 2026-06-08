@@ -8,14 +8,21 @@ const afacad = Afacad({
 });
 
 export const metadata: Metadata = {
-  title: "UstadLink | Enterprise AI Since 2008",
+  title: "Diba Tech | Web, Mobile & Software Development Agency",
   description:
-    "UstadLink is a creative software company turning ideas into powerful digital experiences.",
-  keywords: ["UstadLink", "Software Company", "Digital Experiences", "Creative Solutions"],
-  authors: [{ name: "UstadLink Team", url: "https://www.UstadLink.com" }],
-  creator: "UstadLink",
-  publisher: "UstadLink",
-  metadataBase: new URL("https://www.UstadLink.com"),
+    "Diba Tech is a digital agency building websites, mobile apps, custom software, hosting solutions, and reliable technology for growing businesses.",
+  keywords: [
+    "Diba Tech",
+    "Web Development",
+    "Mobile Development",
+    "Software Development",
+    "Digital Agency",
+    "Hosting Solutions",
+  ],
+  authors: [{ name: "Diba Tech Team", url: "https://www.dibatech.com" }],
+  creator: "Diba Tech",
+  publisher: "Diba Tech",
+  metadataBase: new URL("https://www.dibatech.com"),
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -23,26 +30,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "UstadLink",
+    title: "Diba Tech",
     description:
-      "UstadLink is a creative software company turning ideas into powerful digital experiences.",
-    url: "https://www.UstadLink.com",
-    siteName: "UstadLink",
+      "Diba Tech builds web platforms, mobile apps, custom software, and complete digital solutions for modern businesses.",
+    url: "https://www.dibatech.com",
+    siteName: "Diba Tech",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "UstadLink - Creative Software Company",
+        alt: "Diba Tech - Web, Mobile and Software Development Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "UstadLink",
+    title: "Diba Tech",
     description:
-      "UstadLink is a creative software company turning ideas into powerful digital experiences.",
-    creator: "@UstadLink",
+      "Diba Tech builds web platforms, mobile apps, custom software, and complete digital solutions for modern businesses.",
+    creator: "@DibaTech",
     images: ["/og-image.png"],
   },
   robots: {

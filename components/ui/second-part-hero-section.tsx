@@ -1,51 +1,39 @@
-import Image from "next/image";
 import React from "react";
+
+const capabilities = [
+  "Web Development",
+  "Mobile Apps",
+  "Custom Software",
+  "UI/UX Design",
+  "Cloud Hosting",
+  "Maintenance",
+];
 
 const HeroSectionSecond = () => {
   return (
-    <section className="flex md:flex-row flex-col gap-y-32 md:gap-y-0 items-center justify-around xl:gap-60  lg:gap-20 mt-60 pb-20 xl:pb-40 pr-10 md:pr-0 xl:px-24">
+    <section className="flex md:flex-row flex-col gap-y-32 md:gap-y-0 items-center justify-around xl:gap-60 lg:gap-20 mt-60 pb-20 xl:pb-40 pr-10 md:pr-0 xl:px-24">
       <div className="md:max-w-[300px] lg:max-w-xs xl:max-w-2xl flex-shrink-0">
         <p className="md:text-base xl:text-lg">
-          Everything starts with us understanding your goals. Only then do we
-          design, develop, or optimize your digital solution – handpicking the
-          right mix of web, mobile, and cloud technologies to make it work
-          flawlessly.
+          Everything starts with understanding your goals. Then we design,
+          develop, and refine the right mix of web, mobile, software, and cloud
+          technology to make your digital product work smoothly.
         </p>
 
         <p className="md:text-base xl:text-lg mt-8 xl:mt-16">
-          It’s how we’ve crafted seamless technology solutions for clients since
-          2015 — long before modern apps dominated the market.
+          Diba Tech works like a focused agency partner: clear strategy, clean
+          design, strong engineering, and practical support after launch.
         </p>
       </div>
 
-      <div className="grid grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 xl:gap-20 flex-shrink-0">
-        <Image width={100} height={100} src="/logo-dfs.svg" alt="dfs" />
-        <Image
-          width={100}
-          height={100}
-          src="/logo-ds-smith.svg"
-          alt="ds-smith"
-        />
-        <Image
-          width={100}
-          height={100}
-          src="/logo-gigaclear.svg"
-          alt="gigaclear"
-        />
-        <Image width={100} height={100} src="/logo-odeon.svg" alt="odeon" />
-        <Image
-          width={100}
-          height={100}
-          src="/logo-techdata.svg"
-          alt="techdata"
-        />
-        <Image width={100} height={100} src="/logo-tesco.svg" alt="tesco" />
-        <Image
-          width={100}
-          height={100}
-          src="/The_Coca-Cola_Company_logo-new.svg"
-          alt="coca-cola"
-        />
+      <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 xl:gap-8 flex-shrink-0 w-full md:w-auto">
+        {capabilities.map((capability) => (
+          <div
+            key={capability}
+            className="border border-foreground/60 px-4 py-5 text-center text-base md:text-sm xl:text-lg uppercase"
+          >
+            {capability}
+          </div>
+        ))}
       </div>
     </section>
   );

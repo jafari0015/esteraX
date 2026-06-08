@@ -1,41 +1,44 @@
 const Projects = [
   {
-    mainImage: "/person.webp",
-    avatar: "/person.webp",
-    subTitle: "AI for marketing",
-    title: "Last mile route optimisation for DFS",
+    mainImage: "/business.jpeg",
+    avatar: "/business.jpeg",
+    subTitle: "Web Development",
+    title: "Business website and client portal",
     description:
-      "Satalia helped DFS transform their last-mile delivery offering with last-mile delivery technology.",
-    percentage: "18%",
-    subDescription: "Total Saving across the workstream",
+      "A responsive marketing website paired with a secure client portal for inquiries, documents, and customer communication.",
+    percentage: "01",
+    subDescription: "Strategy, design, and web development",
   },
   {
-    mainImage: "/person2.webp",
-    avatar: "/person2.webp",
-    subTitle: "AI for marketing",
-    title: "Supply chain optimization",
-    description: "Optimized supply chain processes for better efficiency.",
-    percentage: "25%",
-    subDescription: "Total Saving across the workstream",
+    mainImage: "/mobile-diba.jpg",
+    avatar: "/mobile-diba.jpg",
+    subTitle: "Mobile Development",
+    title: "Customer mobile app experience",
+    description:
+      "A mobile-first product flow designed for simple onboarding, smooth navigation, and reliable customer engagement.",
+    percentage: "02",
+    subDescription: "Mobile UX, screens, and app development",
   },
   {
-    mainImage: "/person.webp",
-    avatar: "/person.webp",
-    subTitle: "AI for marketing",
-    title: "Logistics AI solution",
-    description: "Implemented AI-driven logistics for improved delivery times.",
-    percentage: "30%",
-    subDescription: "Total Saving across the workstream",
+    mainImage: "/operation.webp",
+    avatar: "/operation.webp",
+    subTitle: "Software Development",
+    title: "Operations dashboard",
+    description:
+      "A custom dashboard that brings business data, tasks, approvals, and reporting into one practical internal tool.",
+    percentage: "03",
+    subDescription: "Custom software for daily operations",
   },
   {
-    mainImage: "/person.webp",
-    avatar: "/person.webp",
-    subTitle: "AI for marketing",
-    title: "Logistics AI solution",
-    description: "Implemented AI-driven logistics for improved delivery times.",
-    percentage: "30%",
-    subDescription: "Total Saving across the workstream",
+    mainImage: "/cloude.jpg",
+    avatar: "/cloude.jpg",
+    subTitle: "Hosting & Support",
+    title: "Cloud deployment setup",
+    description:
+      "A managed hosting setup with deployment, performance checks, security basics, and room for future product growth.",
+    percentage: "04",
+    subDescription: "Hosting, maintenance, and technical care",
   },
-
 ];
+
 export default Projects;

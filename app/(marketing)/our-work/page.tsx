@@ -8,49 +8,47 @@ import Image from "next/image";
 import resourcesData from "@/Data/resources";
 
 export const metadata: Metadata = {
-  title: "Our Work - UstadLink | AI Solutions & Case Studies",
-  description: "Discover how UstadLink has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
+  title: "Our Work - Diba Tech | Web, Mobile & Software Projects",
+  description:
+    "Explore how Diba Tech plans, designs, builds, launches, and supports websites, mobile apps, custom software, hosting setups, and digital products.",
   keywords: [
-    "UstadLink Case Studies",
-    "AI Solutions Portfolio",
-    "Delivery Optimization",
-    "Route Optimization",
-    "AI ROI",
-    "DFS Case Study",
-    "Woolworths Australia",
-    "Last Mile Delivery",
-    "AI Efficiency",
-    "Business Transformation",
-    "AI Success Stories",
-    "Enterprise AI Solutions"
+    "Diba Tech Projects",
+    "Web Development Portfolio",
+    "Mobile App Projects",
+    "Software Development Portfolio",
+    "Custom Software",
+    "Hosting Solutions",
+    "Digital Agency Work",
   ],
   openGraph: {
-    title: "Our Work - UstadLink | AI Solutions & Case Studies",
-    description: "Discover how UstadLink has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
-    url: "https://www.UstadLink.com/our-work",
-    siteName: "UstadLink",
+    title: "Our Work - Diba Tech | Web, Mobile & Software Projects",
+    description:
+      "Explore Diba Tech projects across websites, mobile apps, custom software, hosting, and digital development.",
+    url: "https://www.dibatech.com/our-work",
+    siteName: "Diba Tech",
     images: [
       {
         url: "/bg-our-work.svg",
         width: 1200,
         height: 630,
-        alt: "UstadLink Our Work - AI Solutions Portfolio",
+        alt: "Diba Tech Our Work",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Work - UstadLink | AI Solutions & Case Studies",
-    description: "Discover how UstadLink has helped clients save 11 million delivery miles per year, deliver 200x ROI, and improve efficiency. Explore our AI solutions and case studies including DFS and Woolworths Australia.",
-    creator: "@UstadLink",
+    title: "Our Work - Diba Tech | Web, Mobile & Software Projects",
+    description:
+      "Explore Diba Tech projects across websites, mobile apps, custom software, hosting, and digital development.",
+    creator: "@DibaTech",
     images: ["/bg-our-work.svg"],
   },
 };
+
 const OurWork = () => {
   const resources: ResourceItem[] = resourcesData;
   return (
     <section>
-      {" "}
       <section className="relative min-h-[70vh] text-foreground">
         <Image
           src="/bg-our-work.svg"
@@ -62,38 +60,33 @@ const OurWork = () => {
         <div>
           <div className="relative flex md:flex-row flex-col justify-start gap-14 pl-6 xl:gap-36 pt-28 md:pt-72 md:pl-26 lg:pl-40">
             <div>
-              <h3 className="text-lg md:text-2xl uppercase tracking-wide mb-4">
-                Our Work
-              </h3>
-              <h1 className="text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-bold tracking-wider mb-6 max-w-3xl">
-                We could save you 11 million delivery miles per year.
+              <h3 className="text-lg md:text-2xl uppercase mb-4">Our Work</h3>
+              <h1 className="text-3xl md:text-3xl lg:text-4xl xl:text-6xl font-bold mb-6 max-w-3xl">
+                We build digital products that help teams sell, operate, and grow.
               </h1>
             </div>
             <p className="text-lg md:text-sm xl:text-2xl font-thin xl:leading-relaxed leading-9 md:leading-8 mb-12 max-w-xs xl:max-w-lg xl:mr-0 xl:pt-0 lg:mr-32 mr-10 lg:pt-20">
-              Or deliver a 200x ROI. Or improve efficiency equivalent to adding
-              140 people – like we’ve done for other clients. <br /> <br /> But
-              it’s not just about you. It’s also about your customers. <br />{" "}
-              <br />
-              Because when we create solutions that improve their lives,
-              everyone wins. It’s how we helped DFS earn an 8% uplift in net
-              promoter score through last-mile delivery transformation. And it’s
-              how we helped Woolworths Australia increase delivery capacity by
-              30% to get fresh groceries to their customers quicker than ever.
+              Every project starts with a clear goal: better customer
+              experience, smoother operations, stronger online presence, or a
+              product your team can rely on every day. <br /> <br />
+              Diba Tech can support the full path from strategy and design to
+              development, launch, hosting, maintenance, and future feature
+              growth.
             </p>
           </div>
         </div>
       </section>
       <div>
         <WorkComponents
-          imageSrc="/person.webp"
+          imageSrc="/case-study-web-portal.svg"
           workItems={[
             {
-              subTitle: "AI for marketing",
-              title: "Last mile route optimisation for DFS",
+              subTitle: "Web Development",
+              title: "Business website and client portal",
               description:
-                "Satalia helped DFS transform their last-mile delivery offering with last-mile delivery technology.",
-              percentage: "18%",
-              subDescription: "Total Saving across the workstream",
+                "Diba Tech builds responsive websites and practical portals that help businesses manage customers, content, and communication.",
+              percentage: "01",
+              subDescription: "Strategy, design, and web development",
             },
           ]}
         />

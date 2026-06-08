@@ -77,8 +77,8 @@ const HeroSection = () => {
           variants={item}
         >
           <h1>
-          UstadLink brings innovation to <br />
-            life through code and creativity.
+            Diba Tech builds web, mobile, <br />
+            and software solutions that grow with you.
           </h1>
         </motion.div>
 
@@ -87,14 +87,14 @@ const HeroSection = () => {
           variants={fadeItem}
         >
           <p>
-            From concept, to design, to launch, we’ll help you create seamless
-            experiences through innovation and modern technology.
+            From concept and design to launch and support, we help businesses
+            turn ideas into fast, reliable digital products.
           </p>
         </motion.div>
 
         <motion.div variants={fadeItem}>
           <Button icon={<TfiArrowRight />} className="mt-8 md:mt-14 text-3xl">
-            Learn More
+            Start a Project
           </Button>
         </motion.div>
 

@@ -1,6 +1,7 @@
 import React from "react";
 import DrawOutlineButton from "./draw-outline-button";
 import Image from "next/image";
+import Link from "next/link";
 
 // Type for a single resource item
 export type ResourceItem = {
@@ -8,6 +9,7 @@ export type ResourceItem = {
   title: string;
   description: string;
   date: string;
+  link?: string;
 };
 
 // Props for the reusable GridWorkSection
@@ -28,13 +30,15 @@ const GridWorkSection: React.FC<GridWorkSectionProps> = ({
             key={index}
             className="flex flex-col px-4 md:pl-10 w-full items-center justify-center border pt-20 relative"
           >
-            <Image
-              src={resource.imageUrl}
-              width={100}
-              height={100}
-              alt={resource.title}
-              className="rounded-full w-60 h-60 md:w-52 md:h-52 lg:w-68 lg:h-68 xl:w-80 xl:h-80"
-            />
+            <Link href={resource.link || "/blog"} className="block">
+              <Image
+                src={resource.imageUrl}
+                width={400}
+                height={400}
+                alt={resource.title}
+                className="rounded-full w-60 h-60 md:w-52 md:h-52 lg:w-68 lg:h-68 xl:w-80 xl:h-80 object-cover hover:scale-105 transition-all duration-500"
+              />
+            </Link>
             <div className="mt-10 text-center md:text-left">
               <span className="text-base pt-20 pb-5">{resource.date}</span>
               <h1 className="text-3xl lg:text-4xl xl:text-5xl font-semibold mb-8 md:h-[150px]">
@@ -45,9 +49,11 @@ const GridWorkSection: React.FC<GridWorkSectionProps> = ({
               </p>
             </div>
             <div className="self-start mt-10 mb-14">
-              <DrawOutlineButton strokeColor="#000000">
-                Learn More
-              </DrawOutlineButton>
+              <Link href={resource.link || "/blog"}>
+                <DrawOutlineButton strokeColor="#000000">
+                  Read Blog
+                </DrawOutlineButton>
+              </Link>
             </div>
           </div>
         ))}

@@ -1,29 +1,29 @@
 const faqData = [
   {
-    q: "What does Satolia do?",
-    a: "Satalia delivers AI-powered solutions for optimising complex operational processes and decision-making in organisations. We offer solutions for media & marketing, transport & logistics, and workforce optimisation. We also provide AI strategy, consultation, and custom solutions across a broad range of fields and industries. Find out",
-    url: "https://raga.space",
+    q: "What does Diba Tech do?",
+    a: "Diba Tech is a digital agency that builds websites, mobile apps, custom software, hosting solutions, and ongoing technology support for businesses.",
+    url: "/contact",
   },
   {
-    q: "Who is the CEO of Satolia?",
-    a: "The CEO of Satolia is John Doe.",
-    url: "https://raga.space",
+    q: "Can Diba Tech build both web and mobile products?",
+    a: "Yes. We can help with responsive websites, web platforms, mobile app experiences, dashboards, portals, and custom software systems.",
+    url: "/contact",
   },
   {
-    q: "What is the mission of Satolia?",
-    a: "Our mission is to make AI accessible...",
-    url: "https://raga.space",
+    q: "Do you also handle hosting and maintenance?",
+    a: "Yes. We support launch, hosting, updates, bug fixes, performance checks, and future improvements after the product goes live.",
+    url: "/contact",
   },
   {
-    q: 'What is the meaning of "Satolia"?',
-    a: "Satolia stands for...",
-    url: "https://raga.space",
+    q: "How does a project usually start?",
+    a: "We begin by understanding your goals, audience, required features, timeline, and budget. Then we shape a practical plan for design, development, and launch.",
+    url: "/contact",
   },
-
   {
-    q: "What careers does Satolia offer?",
-    a: "We offer careers in AI, design, and tech...",
-    url: "https://raga.space",
+    q: "What types of businesses can work with Diba Tech?",
+    a: "We work with startups, small businesses, agencies, and organizations that need reliable web development, mobile development, software development, or technical support.",
+    url: "/contact",
   },
 ];
+
 export default faqData;

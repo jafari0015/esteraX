@@ -1,73 +1,80 @@
 import type { Metadata } from "next";
 import Line from "@/components/Layout/line";
 import DrawOutlineButton from "@/components/ui/draw-outline-button";
-import { client } from "@/libs/sanity";
+import { getSanityClient, isSanityConfigured } from "@/libs/sanity";
+import { localBlogPosts, toBlogCard } from "@/Data/blog-posts";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { TfiTimer } from "react-icons/tfi";
 
 export const metadata: Metadata = {
-  title: "Blog - UstadLink | Latest Insights on AI, Technology & Innovation",
-  description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with UstadLink.",
+  title: "Blog - Diba Tech | Web, Mobile & Software Insights",
+  description:
+    "Explore Diba Tech insights on web development, mobile development, custom software, hosting, design, and digital product growth.",
   keywords: [
-    "UstadLink Blog",
-    "AI Blog",
+    "Diba Tech Blog",
+    "Web Development Blog",
+    "Mobile Development Blog",
     "Technology Blog",
     "Web Development",
     "Innovation",
     "Tech Insights",
-    "AI Tutorials",
     "Software Development",
     "Digital Transformation",
-    "Machine Learning Blog",
-    "Data Science Blog"
+    "Hosting Solutions",
+    "UI UX Design",
   ],
   openGraph: {
-    title: "Blog - UstadLink | Latest Insights on AI, Technology & Innovation",
-    description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with UstadLink.",
-    url: "https://www.UstadLink.com/blog",
-    siteName: "UstadLink",
+    title: "Blog - Diba Tech | Web, Mobile & Software Insights",
+    description:
+      "Explore Diba Tech insights on web development, mobile development, custom software, hosting, design, and digital product growth.",
+    url: "https://www.dibatech.com/blog",
+    siteName: "Diba Tech",
     images: [
       {
         url: "/bg-our-work.svg",
         width: 1200,
         height: 630,
-        alt: "UstadLink Blog - Technology Insights",
+        alt: "Diba Tech Blog - Technology Insights",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog - UstadLink | Latest Insights on AI, Technology & Innovation",
-    description: "Explore the latest insights, tutorials, and stories from the world of web development, AI, and innovation. Stay inspired, stay ahead, and discover how ideas turn into code with UstadLink.",
-    creator: "@UstadLink",
+    title: "Blog - Diba Tech | Web, Mobile & Software Insights",
+    description:
+      "Explore Diba Tech insights on web development, mobile development, custom software, hosting, design, and digital product growth.",
+    creator: "@DibaTech",
     images: ["/bg-our-work.svg"],
   },
 };
 
 
 export default async function BlogList() {
-  const blogs = await client.fetch(`*[_type == "blog"] | order(publishedAt desc){
-    _id,
-    title,
-    slug,
-    excerpt,
-    mainImage{
-      asset->{
+  const sanityBlogs: Blog[] = isSanityConfigured()
+    ? await getSanityClient().fetch(`*[_type == "blog"] | order(publishedAt desc){
         _id,
-        url
-      },
-      alt,
-      caption
-    },
-    publishedAt,
-    categories[]->{
-      title,
-      _id
-    },
-    readingTime
-  }`);
+        title,
+        slug,
+        excerpt,
+        mainImage{
+          asset->{
+            _id,
+            url
+          },
+          alt,
+          caption
+        },
+        publishedAt,
+        categories[]->{
+          title,
+          _id
+        },
+        readingTime
+      }`)
+    : [];
+  const blogs = sanityBlogs.length > 0 ? sanityBlogs : localBlogPosts.map(toBlogCard);
   return (
     <>
       <section className="relative min-h-[130vh]">
@@ -86,15 +93,15 @@ export default async function BlogList() {
               Welcome to the blog.
             </h3>
             <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold tracking-wider mb-6 max-w-2xl xl:max-w-6xl">
-              &quot;Explore the latest insights, tutorials, and stories from the
-              world of web development. Stay inspired, stay ahead, and discover
-              how ideas turn into code.&quot;
+              &quot;Explore practical insights on websites, mobile apps, custom
+              software, hosting, and how strong digital products help businesses
+              grow.&quot;
             </h1>
           </div>
         </div>
         <div className="relative md:max-w-2xl float-right text-foreground text-4xl px-4 pt-20 md:pt-48 lg:pt-70 md:pr-20">
-          <p>&quot;If we make decisions in the right way, we can have a world of abundance. A world where people are free to do whatever they want to do.&quot;</p>
-          <h5 className="text-lg mt-5">CEO and Founder of UstadLink</h5>
+          <p>&quot;Good digital products make business feel simpler, faster, and easier for the people using them.&quot;</p>
+          <h5 className="text-lg mt-5">Diba Tech Team</h5>
         </div>
 
       </section>
@@ -161,4 +168,3 @@ export default async function BlogList() {
       </section></>
   );
 };
-

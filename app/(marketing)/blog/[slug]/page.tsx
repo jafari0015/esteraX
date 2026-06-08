@@ -1,14 +1,62 @@
 import type { Metadata } from "next";
 import { PortableText, PortableTextBlock } from "@portabletext/react";
 import Image from "next/image";
-import { client } from "@/libs/sanity";
+import { getSanityClient, isSanityConfigured } from "@/libs/sanity";
+import { getLocalBlogPost } from "@/Data/blog-posts";
 
 type BlogDetailProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: BlogDetailProps): Promise<Metadata> {
-  const post = await client.fetch<BlogPost>(
+  const { slug } = await params;
+  const localPost = getLocalBlogPost(slug);
+
+  if (localPost) {
+    return {
+      title: `${localPost.title} - Diba Tech Blog`,
+      description: localPost.excerpt,
+      keywords: [
+        localPost.title,
+        "Diba Tech Blog",
+        "Web Development Blog",
+        "Mobile Development Blog",
+        "Software Development",
+      ],
+      openGraph: {
+        title: `${localPost.title} - Diba Tech Blog`,
+        description: localPost.excerpt,
+        url: `https://www.dibatech.com/blog/${slug}`,
+        siteName: "Diba Tech",
+        images: [
+          {
+            url: localPost.imageUrl,
+            width: 1200,
+            height: 630,
+            alt: localPost.title,
+          },
+        ],
+        type: "article",
+        publishedTime: localPost.publishedAt,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${localPost.title} - Diba Tech Blog`,
+        description: localPost.excerpt,
+        creator: "@DibaTech",
+        images: [localPost.imageUrl],
+      },
+    };
+  }
+
+  if (!isSanityConfigured()) {
+    return {
+      title: "Blog Post Not Found - Diba Tech",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  const post = await getSanityClient().fetch<BlogPost>(
     `*[_type == "blog" && slug.current == $slug][0]{
       title,
       excerpt,
@@ -19,31 +67,36 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
       publishedAt,
       categories[]->{title}
     }`,
-    { slug: params.slug }
+    { slug }
   );
 
   if (!post) {
     return {
-      title: "Blog Post Not Found - UstadLink",
+      title: "Blog Post Not Found - Diba Tech",
       description: "The requested blog post could not be found.",
     };
   }
 
   return {
-    title: `${post.title} - UstadLink Blog`,
-    description: post.excerpt || `Read ${post.title} on the UstadLink blog. Discover insights on AI, technology, and innovation.`,
+    title: `${post.title} - Diba Tech Blog`,
+    description:
+      post.excerpt ||
+      `Read ${post.title} on the Diba Tech blog. Discover insights on web, mobile, software, hosting, and digital product growth.`,
     keywords: [
       post.title,
-      "UstadLink Blog",
-      "AI Blog",
+      "Diba Tech Blog",
+      "Web Development Blog",
+      "Mobile Development Blog",
       "Technology Blog",
       ...(post.categories?.map(cat => cat.title) || [])
     ],
     openGraph: {
-      title: `${post.title} - UstadLink Blog`,
-      description: post.excerpt || `Read ${post.title} on the UstadLink blog. Discover insights on AI, technology, and innovation.`,
-      url: `https://www.UstadLink.com/blog/${params.slug}`,
-      siteName: "UstadLink",
+      title: `${post.title} - Diba Tech Blog`,
+      description:
+        post.excerpt ||
+        `Read ${post.title} on the Diba Tech blog. Discover insights on web, mobile, software, hosting, and digital product growth.`,
+      url: `https://www.dibatech.com/blog/${slug}`,
+      siteName: "Diba Tech",
       images: post.mainImage?.asset?.url ? [
         {
           url: post.mainImage.asset.url,
@@ -56,7 +109,7 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
           url: "/bg-our-work.svg",
           width: 1200,
           height: 630,
-          alt: "UstadLink Blog Post",
+          alt: "Diba Tech Blog Post",
         },
       ],
       type: "article",
@@ -64,9 +117,11 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} - UstadLink Blog`,
-      description: post.excerpt || `Read ${post.title} on the UstadLink blog. Discover insights on AI, technology, and innovation.`,
-      creator: "@UstadLink",
+      title: `${post.title} - Diba Tech Blog`,
+      description:
+        post.excerpt ||
+        `Read ${post.title} on the Diba Tech blog. Discover insights on web, mobile, software, hosting, and digital product growth.`,
+      creator: "@DibaTech",
       images: post.mainImage?.asset?.url ? [post.mainImage.asset.url] : ["/bg-our-work.svg"],
     },
   };
@@ -208,7 +263,71 @@ const components = {
 
 // --- Page Component ---
 export default async function BlogDetail({ params }: BlogDetailProps) {
-  const post = await client.fetch<BlogPost>(
+  const { slug } = await params;
+  const localPost = getLocalBlogPost(slug);
+
+  if (localPost) {
+    return (
+      <section className="min-h-screen bg-primary pt-40">
+        <div className="max-w-6xl mx-auto px-6 md:pl-24">
+          <header className="mb-10 text-center">
+            <div className="flex justify-center gap-2 mb-5">
+              {localPost.categories.map((cat) => (
+                <span
+                  key={cat._id}
+                  className="text-sm border border-white rounded-full py-2 px-3 uppercase text-foreground font-semibold"
+                >
+                  {cat.title}
+                </span>
+              ))}
+            </div>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+              {localPost.title}
+            </h1>
+            <p className="text-base md:text-lg font-semibold text-foreground/90">
+              Diba Tech Team - {localPost.readingTime} minute read
+            </p>
+          </header>
+
+          <div className="overflow-hidden rounded-2xl mb-12 shadow-lg bg-foreground">
+            <Image
+              src={localPost.imageUrl}
+              alt={localPost.title}
+              width={1200}
+              height={700}
+              className="rounded-xl w-full object-cover"
+              priority
+            />
+          </div>
+
+          <article className="mx-auto max-w-4xl text-foreground pb-24">
+            <p className="text-xl md:text-2xl leading-relaxed mb-12">
+              {localPost.excerpt}
+            </p>
+            {localPost.sections.map((section) => (
+              <section key={section.heading} className="mb-12">
+                <h2 className="text-3xl md:text-5xl font-semibold mb-5">
+                  {section.heading}
+                </h2>
+                {section.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="mb-4 text-xl leading-relaxed text-foreground/90"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </section>
+            ))}
+          </article>
+        </div>
+      </section>
+    );
+  }
+
+  if (!isSanityConfigured()) return <div>Post not found</div>;
+
+  const post = await getSanityClient().fetch<BlogPost>(
     `*[_type == "blog" && slug.current == $slug][0]{
       title,
       "author": author->{name, "image": image.asset->url, bio, "slug": slug.current},
@@ -231,7 +350,7 @@ export default async function BlogDetail({ params }: BlogDetailProps) {
       categories[]->{title, _id},
       excerpt,
     }`,
-    { slug: params.slug }
+    { slug }
   );
 
   if (!post) return <div>Post not found</div>;

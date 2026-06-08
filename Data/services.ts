@@ -1,38 +1,45 @@
 const services = [
   {
     id: 1,
-    title: "AI for marketing",
+    title: "Web development",
     description:
-      "Leverage AI to personalize marketing campaigns and optimize customer engagement.\n\nWith advanced analytics and predictive modeling, businesses can target audiences more effectively and increase ROI.",
+      "We build responsive websites, landing pages, dashboards, and web platforms that are fast, polished, and easy to manage.\n\nFrom frontend interfaces to backend systems, Diba Tech turns your idea into a professional web presence.",
     image: "/icon-marketing.svg",
   },
   {
     id: 2,
-    title: "AI for transport & logistics",
+    title: "Mobile development",
     description:
-      "Optimize routes, predict maintenance, and improve supply chain efficiency with AI.\n\nReal-time data processing and machine learning help reduce costs and enhance delivery times.",
-    image: "/icon-marketing.svg",
+      "We design and develop mobile app experiences for customers, teams, and growing digital products.\n\nOur focus is smooth user flows, reliable performance, and features that feel natural on every screen.",
+    image: "/icon-transport.svg",
   },
   {
     id: 3,
-    title: "AI for workforce",
+    title: "Software development",
     description:
-      "Enhance employee productivity and satisfaction using AI-driven tools.\n\nFrom talent acquisition to performance management, AI provides insights for better decision-making.",
-    image: "/icon-marketing.svg",
+      "We create custom software for operations, booking, reporting, automation, internal tools, and business workflows.\n\nYou get practical systems built around how your organization actually works.",
+    image: "/icon-workforce.svg",
   },
   {
     id: 4,
-    title: "AI strategy & consulting",
+    title: "UI/UX design",
     description:
-      "Develop comprehensive AI strategies tailored to your business needs.\n\nOur experts guide you through implementation, ensuring alignment with your goals and ethical considerations.",
+      "We shape clear interfaces, user journeys, design systems, and prototypes before development starts.\n\nThe result is digital product design that looks sharp and feels simple for real users.",
     image: "/icon-marketing.svg",
   },
   {
     id: 5,
-    title: "AI simulations & digital twins",
+    title: "Hosting & cloud solutions",
     description:
-      "You can prove that a new approach will work, rather than just speculate. Our synthetic data generators model scenarios, and our digital twins simulate outcomes. Determine how to avoid expensive infrastructure changes with better optimisation, while hitting your critical metrics.",
-    image: "/icon-marketing.svg",
+      "We help deploy, host, secure, and maintain your websites, apps, and software platforms.\n\nDiba Tech can support domains, servers, cloud setup, performance, and ongoing technical care.",
+    image: "/icon-transport.svg",
+  },
+  {
+    id: 6,
+    title: "Maintenance & support",
+    description:
+      "We stay close after launch with updates, fixes, improvements, and feature growth.\n\nYour product keeps moving forward while your team gets dependable technical support.",
+    image: "/icon-workforce.svg",
   },
 ];
 

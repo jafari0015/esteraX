@@ -14,7 +14,7 @@ const ContactSection = () => {
       <section className=" z-10 flex flex-col md:flex-row justify-between sticky top-0 items-center w-full min-h-[70vh] xl:min-h-screen py-10">
         <div className="flex-1 flex flex-col justify-center px-6 md:pl-30 xl:pl-52 mt-10 md:mt-0 md:text-left order-2 md:order-1">
           <h1 className="text-5xl md:text-5xl xl:text-7xl text-foreground leading-tight">
-            Ask us how AI can benefit your business.
+            Tell us what digital product your business needs next.
           </h1>
           <div>
             <Link href="/contact">
